@@ -1,1 +1,93 @@
-This is my first commit
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+    <title>SF_Portfolio</title>
+</head>
+<body>
+    <header>
+
+        <div id="brand">
+            <div id="logo">#</div>
+            <div id="name">Sofoklis Fountas</div>
+        </div>
+
+        <nav class="nav-bar">
+            <ul class="nav-list show-desktop hide-mobile" id="nav">
+                <li class="exit-btn hide-desktop" id="exit"><img src="images/exit menu.svg" alt="exit menu"></li>
+                <li class="nav-item"><a class="nav-link" href="#Home">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="#Portfolio">Portfolio</a></li>
+                <li class="nav-item"><a class="nav-link" href="#AboutMe">About me</a></li>
+                <li class="nav-item"><a class="nav-link" href="#Contact">Contact</a></li>
+            </ul>
+
+            <a class="hide-desktop" href="#">
+                    <img  class="menu" id="menu" src="images/hamburger menu.svg" alt="toggle menu">
+            </a>
+        </nav>
+    </header>
+    <main>
+        <section class="hero">
+
+            <div class="welcome-content">
+                <h1>I'm Sofoklis, a UI Developer</h1>
+                <p>Living in Prague, former Java developer in T-mobile.</p>
+                <button class="cta">Download CV</button>
+            </div>
+
+            <div class="hero-img">
+                <img src="Images/70962189_2144933979143889_2989844919360684032_n.png">
+            </div>
+
+            
+        </section>
+
+        <div class="scroll-btn" id="scroll-btn">
+            <span>Scroll down</span>
+        </div>
+
+        <section class="portfolio">
+            <h2 id="portfolio">Portfolio</h2>
+            <p>Take a look at my work</p>
+
+            <ul class="cards-list">
+                <li class="card" id="card-1"></li>
+                <li class="card" id="card-2"></li>
+                <li class="card" id="card-3"></li>
+            </ul>
+        </section> 
+
+        <section class="bio">
+            <div class="bio-img"></div>
+            <div class="bio-text">
+                <p>Have my breakfast spaghetti yarn bite the neighbor’s bratty kid, stare at ceiling light licks paws for meowing chowing and wowing spot something, big eyes, big eyes, crouch, shake butt, prepare to pounce. If it fits I sits. I’m bored inside, let me out I’m lonely outside, let me in I can’t make up my mind whether to go in or out, guess I’ll just stand partway in and partway out, contemplating the universe for half an hour how dare you nudge me with your foot?!?! leap into the air in greatest offense!. Pee in the shoe Have my breakfast spaghetti yarn bite the neighbor’s bratty kid, stare at ceiling light licks paws for meowing chowing and wowing spot something, big eyes, big eyes, crouch. <br/><br/> Dhake butt, prepare to pounce. If it fits I sits. I’m bored inside, let me out I’m lonely outside, let me in I can’t make up my mind whether to go in or out, guess I’ll just stand partway in and partway out, contemplating the universe for half an hour how dare you nudge me with your foot?!?! leap into the air in greatest offense!. Pee in the shoe with your foot?!?! leap into the air in greatest offense!. Pee in the shoe Have my breakfast spaghetti yarn bite the neighbor’s bratty kid, stare at ceiling light licks paws for meowing chowing and wowing spot something, big eyes, big eyes, crouch, shake butt, prepare to pounce. If it fits I sits. I’m bored inside, let me out I’m lonely outside, let me</p>
+            </div>
+        </section>
+
+    </main>
+
+
+    <script>
+
+        var menu = document.getElementById('menu');
+        var nav = document.getElementById('nav');
+        var exit = document.getElementById('exit');
+
+        menu.addEventListener('click', function(e){
+            nav.classList.toggle('hide-mobile');
+            e.preventDefault();
+        });
+       
+        exit.addEventListener('click', function(e){
+            nav.classList.add('hide-mobile');
+            e.preventDefault();
+        });
+
+
+        
+    </script>
+</body>
+</html>

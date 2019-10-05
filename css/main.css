@@ -1,0 +1,326 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap');
+/* General */
+html{
+    border-right: 5px solid #7443FF;
+    overflow-x: hidden;
+}
+
+html, body, * {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 15px;
+    color: black;
+    margin: 0;
+    padding: 0;
+}
+
+main{
+    width:71%;
+    margin: 0 auto;
+}
+
+.show-desktop{
+    display: block;
+}
+
+h2{
+    font-size: 32px;
+    font-weight: bold;
+}
+
+p{
+    /* font-size: 18px; */
+    line-height: 2;
+}
+
+ul{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    text-decoration: none; 
+}
+
+main {
+    padding: 0 5em 2em 5em; /* defining container whitespace */
+}
+
+/* Navigation */
+
+.hide-desktop{
+    display: none;
+}
+
+header {
+    width: 85.4%;
+    margin:0 auto; /* defining container whitespace */
+    height: 90px;;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 30px;
+}
+
+#brand{
+    width: 50%;
+    display: flex;
+}
+
+#name{
+    margin-left: 5%;
+    font-weight: bold;
+    letter-spacing: 5px;
+}
+
+.nav-bar {
+   width: 500px; 
+}
+
+.nav-list {
+    display: flex;
+    justify-content: space-between;
+}
+
+.nav-item { 
+    margin-left: 15px;
+}
+
+.nav-link{
+    list-style-type: none;
+    text-align: right;
+    
+    letter-spacing: 1px;
+    padding-bottom: 5px;
+}
+
+.nav-item a:hover {
+    font-weight: bold;
+    color: #7443FF;
+    border-bottom: 3px solid #7443FF;
+}
+
+
+/* HERO SECTION */
+
+/* Sets top and bottom padding for each section */
+.section-wrapper{
+    
+}
+
+.hero{
+    margin: 100px 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+.welcome-content{
+    margin-right: 5%;
+}
+
+.welcome-content h1{
+    padding: 80px 0 20px 0;
+    height: auto;
+    width: auto;
+    font-size: 50px;
+    font-weight:700;
+}
+
+/* Call to action button styling */
+.cta{
+    margin-top: 10%;
+    font-weight: bold;
+    color: white;
+    background-color: #7443FF;
+    width:163px;
+    height: 48px;
+    border: none;
+    border-radius: 24px;
+
+    cursor: pointer;
+}
+
+.hero-img img {
+    float: right;
+    /* height: auto; */
+    max-width: 450px;
+    
+}
+
+.scroll-btn{
+    text-align: center;
+    margin: 50px 0; 
+}
+
+/* PORTFOLIO SECTION */
+
+.portfolio{
+    height: auto;
+    /* width: 100%; */
+    padding: 100px 0;
+    float: none;
+    display: block;
+}
+
+.portfolio h2, .portfolio p{ 
+    text-align: center;
+    padding-bottom: 25px;
+}
+
+/* FOR TESTING */
+
+.cards-list{
+    margin: 5% 0;
+    height: 18vw;
+    display: flex;    
+}
+
+/* Set margin on sides of middle child (li)
+so I don't ruin the white-space of portfolio card-container */
+li:nth-child(2){
+    margin: 0 3%;
+}
+
+.card{
+    /* card styling */
+    background-color: rgba(117, 67, 255, 0.486); /* bg color can be DELETED */
+    width: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-radius: 10px;
+
+    cursor: pointer;
+}
+
+/* Portfolio image addition to the cards */
+#card-1{
+    background-image: url("../Images/portfolio-item 1.png");
+}
+#card-2{
+    background-image: url("../Images/portfolio-item 2.png");
+}
+#card-3{
+    background-image: url("../Images/portfolio-item 3.png");
+}
+
+/* BIO SECTION */
+.bio{
+    height: auto;
+    padding: 100px 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+.bio-img{
+    background-image: url("../Images/70962189_2144933979143889_2989844919360684032_n.png");
+    background-color: rgba(117, 67, 255, 0.486); /* bg color can be DELETED */
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 50%;
+    height: 34vw;
+    float: left;
+}
+
+.bio-text{
+    float: right;
+    width: 70%;
+    margin-left: 5%;
+}
+
+
+
+
+
+@media only screen and (min-width : 768px) and (max-width: 1024px){
+    html, body, *{
+        font-size: 14px;
+        background-color: rgb(118, 118, 182);
+    }
+
+    header{
+        padding: 0 3em 1em 3em;
+    }
+
+}
+
+/* mobile view */
+@media only screen and (min-width : 320px) and (max-width: 768px){
+
+    html, body{
+    }
+
+    header{
+        padding: 0 2em 1em 2em;
+    }
+
+    .nav-bar{
+
+    }
+
+    .nav-list{
+        position: fixed;
+        width: 60%;
+        top: 0;
+        right: 0;
+        background-color: rgb(65, 48, 70);
+        height: 100%;
+        z-index: 7;
+        padding: 0 2em;
+        /* padding-top: 1em; */
+    }
+
+    .hide-desktop{
+        width: 100%;
+        display: block;
+        text-align: right;
+        /* position: fixed;
+        right: 25px;
+        top: 25px; */
+    }
+
+    .exit-btn{
+        margin-bottom: 1.5em;
+        margin-top: 1.6em;
+        text-align: right;
+    }
+
+    .exit-btn:hover{
+        cursor: pointer;
+    }
+
+    /* Sizing of exit button icon */
+    .exit-btn img{
+        width: auto;
+        height: 40px;
+    }
+
+    .show-desktop{
+        display: block;
+    }
+
+    header{
+        /* width: 100%; */
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .hide-mobile{
+        display: none;
+    }
+
+    .nav-item{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        padding: 1em 0;
+    }
+    
+    .nav-item a{
+        color: rgb(235, 235, 235);
+    }
+
+    .nav-item a:hover {
+        border-bottom: none;
+    }
+}
