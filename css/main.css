@@ -53,8 +53,8 @@ main {
 }
 
 header {
-    width: 85.4%;
-    margin:0 auto; /* defining container whitespace */
+    /* width: 85.4%; */
+    margin:0 150px; /* defining container whitespace */
     height: 90px;;
     display: flex;
     justify-content: space-between;
@@ -74,7 +74,7 @@ header {
 }
 
 .nav-bar {
-   width: 500px; 
+   width: 500px;
 }
 
 .nav-list {
@@ -83,13 +83,14 @@ header {
 }
 
 .nav-item { 
-    margin-left: 15px;
+   width: 35%;
+   text-align: center;
 }
 
 .nav-link{
     list-style-type: none;
     text-align: right;
-    
+    margin-left: 15px;
     letter-spacing: 1px;
     padding-bottom: 5px;
 }
@@ -177,7 +178,7 @@ header {
 
 /* Set margin on sides of middle child (li)
 so I don't ruin the white-space of portfolio card-container */
-li:nth-child(2){
+.card:nth-child(2){
     margin: 0 3%;
 }
 
@@ -213,7 +214,7 @@ li:nth-child(2){
 
 .bio-img{
     background-image: url("../Images/70962189_2144933979143889_2989844919360684032_n.png");
-    background-color: rgba(117, 67, 255, 0.486); /* bg color can be DELETED */
+    background-color: rgba(117, 67, 255, 0.527); /* bg color can be DELETED */
     background-size: contain;
     background-repeat: no-repeat;
     width: 50%;
@@ -238,7 +239,8 @@ li:nth-child(2){
     }
 
     header{
-        padding: 0 3em 1em 3em;
+        padding: 0 1em;
+        margin: 0 50px;
     }
 
 }
@@ -250,7 +252,8 @@ li:nth-child(2){
     }
 
     header{
-        padding: 0 2em 1em 2em;
+        /* padding: 0 2em 1em 2em; */
+        margin: 0 50px;
     }
 
     .nav-bar{
@@ -262,7 +265,7 @@ li:nth-child(2){
         width: 60%;
         top: 0;
         right: 0;
-        background-color: rgb(65, 48, 70);
+        background-color: rgba(181, 154, 255, 0.753);
         height: 100%;
         z-index: 7;
         padding: 0 2em;
@@ -270,32 +273,28 @@ li:nth-child(2){
     }
 
     .hide-desktop{
-        width: 100%;
         display: block;
         text-align: right;
-        /* position: fixed;
-        right: 25px;
-        top: 25px; */
     }
 
     .exit-btn{
-        margin-bottom: 1.5em;
-        margin-top: 1.6em;
+        /* margin: 2.1em 3.5em; */
+        margin: 30px 55px;
         text-align: right;
     }
 
-    .exit-btn:hover{
+    .exit-btn img:hover{
         cursor: pointer;
     }
 
     /* Sizing of exit button icon */
     .exit-btn img{
-        width: auto;
-        height: 40px;
+        /* height: 40px; */
     }
 
     .show-desktop{
         display: block;
+        padding: 0;
     }
 
     header{
@@ -315,12 +314,16 @@ li:nth-child(2){
         align-items: center;
         padding: 1em 0;
     }
-    
-    .nav-item a{
-        color: rgb(235, 235, 235);
+
+    .nav-link{
+        padding: 0;
+        margin: 0;
+        color: #ebebeb;
     }
 
     .nav-item a:hover {
-        border-bottom: none;
+        font-weight: normal;
+        color: #ebebeb;
+        border: none;
     }
 }
