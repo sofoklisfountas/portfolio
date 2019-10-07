@@ -1,9 +1,25 @@
-@import url('https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,500,600,700&display=swap');
 /* General */
 html{
     border-right: 5px solid #7443FF;
     overflow-x: hidden;
 }
+
+.bold{
+    font-weight: 700;
+}
+
+.medium{
+    font-weight: 600;
+}
+
+.ta-center{
+    text-align: center;
+}
+
+
+
+
 
 html, body, * {
     font-family: 'Montserrat', sans-serif;
@@ -24,7 +40,6 @@ main{
 
 h2{
     font-size: 32px;
-    font-weight: bold;
 }
 
 p{
@@ -54,7 +69,7 @@ main {
 
 header {
     /* width: 85.4%; */
-    margin:0 150px; /* defining container whitespace */
+    margin:0 140px; /* defining container whitespace */
     height: 90px;;
     display: flex;
     justify-content: space-between;
@@ -67,32 +82,32 @@ header {
     display: flex;
 }
 
-#name{
+#myName{
     margin-left: 5%;
-    font-weight: bold;
     letter-spacing: 5px;
 }
 
 .nav-bar {
    width: 500px;
+   
 }
 
 .nav-list {
     display: flex;
     justify-content: space-between;
+    
 }
 
 .nav-item { 
-   width: 35%;
+    display: block;
    text-align: center;
-}
+   text-align: right;
+   white-space: nowrap;
+   list-style-type: none;
+   margin-left: 15px;
+   letter-spacing: 1px;
+   padding-bottom: 5px;
 
-.nav-link{
-    list-style-type: none;
-    text-align: right;
-    margin-left: 15px;
-    letter-spacing: 1px;
-    padding-bottom: 5px;
 }
 
 .nav-item a:hover {
@@ -110,9 +125,12 @@ header {
 }
 
 .hero{
+    height: 700px;
     margin: 100px 0;
     display: flex;
     justify-content: space-between;
+    align-items: center;  /* DELETE THIS */
+    
 }
 
 .welcome-content{
@@ -124,7 +142,6 @@ header {
     height: auto;
     width: auto;
     font-size: 50px;
-    font-weight:700;
 }
 
 /* Call to action button styling */
@@ -141,10 +158,13 @@ header {
     cursor: pointer;
 }
 
+.hero-img {
+    /* width: % */
+}
+
 .hero-img img {
     float: right;
-    /* height: auto; */
-    max-width: 450px;
+    width: 80%;
     
 }
 
@@ -156,16 +176,12 @@ header {
 /* PORTFOLIO SECTION */
 
 .portfolio{
-    height: auto;
-    /* width: 100%; */
     padding: 100px 0;
-    float: none;
-    display: block;
 }
 
 .portfolio h2, .portfolio p{ 
     text-align: center;
-    padding-bottom: 25px;
+    padding-bottom: 15px;
 }
 
 /* FOR TESTING */
@@ -205,29 +221,92 @@ so I don't ruin the white-space of portfolio card-container */
 }
 
 /* BIO SECTION */
-.bio{
+.bio h2{
+    text-align: center;
+}
+
+.bio-content{
     height: auto;
     padding: 100px 0;
     display: flex;
     justify-content: space-between;
+    /* align-items: center; */
+    /* max-height: 500px; */
+}
+
+.bio-img img{
+    width: 500px;
 }
 
 .bio-img{
     background-image: url("../Images/70962189_2144933979143889_2989844919360684032_n.png");
-    background-color: rgba(117, 67, 255, 0.527); /* bg color can be DELETED */
+    /* background-color: rgba(117, 67, 255, 0.527); bg color can be DELETED */
     background-size: contain;
     background-repeat: no-repeat;
-    width: 50%;
-    height: 34vw;
-    float: left;
+    min-width:300px;
+    min-height: 500px;
+    
 }
 
 .bio-text{
-    float: right;
-    width: 70%;
-    margin-left: 5%;
+    display: flex;
+    /* align-items: center; */
+    width: 90%;
+    
+    /* height: auto; */
+    margin-left: calc(20% - 100px);
+    /* margin-top: 3%; */
 }
 
+
+
+/* CONTACT SECTION */
+.contact h2{
+   
+}
+
+.form-container div{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 30px;
+}
+
+.contact-content{
+    display: flex;
+    justify-content: space-between;
+    margin: 100px 0;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    /* width: 70%; */
+}
+form input{
+    height: 48px;
+}
+
+form textarea{
+    height: 96px;;
+}
+
+.personal-info div{
+    margin-top: 30px;
+}
+
+.form-styling{
+background: #FFFFFF 0% 0% no-repeat padding-box;
+border: 1px solid #4D1DD5;
+border-radius: 5px;
+opacity: 1;
+
+/* width CHANGE THE NAME OF THE CLASS */
+width: 500px;
+}
+
+
+/* width: 300px;
+height: 48px; */
 
 
 
