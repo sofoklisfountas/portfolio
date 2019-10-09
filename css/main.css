@@ -34,6 +34,14 @@ main{
     display: block;
 }
 
+h1, h1 span{
+    font-size: 50px;
+}
+
+h1 span{
+    white-space: nowrap;
+}
+
 h2{
     font-size: 32px;
 }
@@ -80,6 +88,8 @@ header {
 #myName{
     margin-left: 5%;
     letter-spacing: 5px;
+    font-size: 24px;
+    white-space: nowrap;
 }
 
 .nav-bar {
@@ -123,11 +133,6 @@ header {
 
 /* HERO SECTION */
 
-/* Sets top and bottom padding for each section */
-.section-wrapper{
-    
-}
-
 .hero{
     /* height: 700px; */
     margin: 100px 0 150px 0;
@@ -142,12 +147,21 @@ header {
 
 .welcome-content h1{
     padding: 80px 0 20px 0;
-    font-size: 50px;
 }
 
-.welcome-content button{
+.welcome-content .button{
     margin-top: 30px;
+    transition: 1s;
+    transition-timing-function: cubic-bezier(.29, 1.01, 1, 1);
 }
+
+.welcome-content .button:hover{
+    background-color: rgb(138, 95, 255);
+    transition: 1s;
+    transition-timing-function: cubic-bezier(.29, 1.01, 1, 1);
+}
+
+
 
 /* Call to action button styling */
 .button{
@@ -244,37 +258,34 @@ so I don't ruin the white-space of portfolio card-container */
     display: flex;
     align-items: center;
     text-align: center;
-    padding: 0 15.6%;
+    width: 600px;
 }
 
 
 
 /* CONTACT SECTION */
-.contact h2{
-   
-}
 
 .contact-content{
     display: flex;
-    justify-content: space-between;
-    padding: 100px 200px;
+    justify-content: center;
+    padding: 100px;
 }
 
 .form-container{
-    width: 500px;
 }
 
 .form-container div{
     display: flex;
     flex-direction: column;
     margin-bottom: 30px;
+    width: 100%;
 }
 
 form{
     display: flex;
     flex-direction: column;
-    margin-right: 50px;
-    min-width: 300px;
+    align-items: center;
+    width: 500px;
 }
 
 form label{
@@ -283,7 +294,6 @@ form label{
 
 form input{
     height: 48px;
-    /* margin-top: 5px; */
 }
 
 form textarea{
@@ -291,68 +301,124 @@ form textarea{
     height: 96px;
 }
 
+form .button{
+    width: 300px;
+}
+
 .form-styling{
     background: #FFFFFF 0% 0% no-repeat padding-box;
-    border: 1px solid #4D1DD5;
+    border: 1px solid #7443FF;
     border-radius: 5px;
     opacity: 1;
-    padding-left: 20px;
+    padding-left: 10px;
+    background-color: rgba(147, 147, 148, 0.048);
+    transition: 200ms ease-in-out;
+}
+
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+    outline: none;
+}
+
+form input:hover,form textarea:hover{
+    box-shadow: 0 0 3px #7443FF;
+    transition: 200ms ease-in-out;
+}
+
+form input:focus, form textarea:focus{
+    box-shadow: 0 0 1px 1px #7443FF;
+    background-color: rgba(117, 67, 255, 0.089);
+    transition: 200ms ease-in-out;
+
+}
+
+form .button{
+    color: #7443FF;
+    background-color: white;
+    border: 2px solid #7443FF;
+    border-radius: 8px;
+    transition: 300ms ease;
+}
+
+form .button:hover{
+    color: white;
+    background-color: #7443FF;
+    transition: 300ms ease;
+}
+
+/* FOOTER SECTION */
+
+footer{
+    height: 50px;
+    background-color: #7443FF;
+    display: flex;
+}
+
+footer p{
+    color: #FFFFFF;
+    font-size: 12px;
+    letter-spacing: 1px;
 }
 
 .personal-info{
-    align-self: center;
-    margin-left: 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 auto;
+    width: 60%;
 }
 
 .personal-info-section{
-    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    white-space: nowrap;
 }
 
-.personal-info img{
-    width: 40px;
-    margin-top: 10px;
-    margin-right: 20px;
+.personal-info-section .title-p{
+    margin-right: 15px;
 }
 
 .personal-info-section svg{
-    width: 28px;
-    height: 28px;
-    fill: #3d3d3d;
+    width: 18px;
+    height: 18px;
+    fill: #FFFFFF;
     margin-top: 5px;
     margin-right: 10px;
     transition: 200ms ease-in-out;
+    cursor: pointer;
 }
 
 .personal-info-section svg:hover{
     transition: 200ms ease-in-out;
-    fill: #4D1DD5;
+    fill: rgb(33, 0, 63);
 }
 
+@media only screen and (min-width: 768px) and (max-width: 1366px){
 
-
-/* Experimental */
-.form-styling:hover{
-}
-
-/*  - put :focus :hover states
-    - margin below labels
-    - align placeholders correctly in inputs
-    - put the web icons below web (& animation on hover)
-    - change the picture in the cirlce (make a new round picture.
-    - Make the circle to be consistent and not an elipse when screen width changes.
-    - Correct the hero section alignment, especially scroll button.
-
-     - make some animations on click or on hover and on buttons
-
-*/
-
-
-
-
-@media only screen and (min-width : 768px) and (max-width: 1024px){
     html, body, *{
         font-size: 14px;
-        background-color: rgb(118, 118, 182);
+        /* background-color: rgb(118, 118, 182); */
+    }
+
+    h1 ,h1 span{
+        font-size: 38px;
+    }
+
+    .hero img{
+        width: 300px;
+    }
+
+
+
+
+}
+
+@media only screen and (min-width : 720px) and (max-width: 1024px){
+    html, body, *{
+        font-size: 14px;
+        /* background-color: rgb(118, 118, 182); */
     }
 
     header{
@@ -382,7 +448,6 @@ form textarea{
         width: 60%;
         top: 0;
         right: 0;
-        background-color: rgba(181, 154, 255, 0.753);
         height: 100%;
         z-index: 7;
         padding: 0 2em;
