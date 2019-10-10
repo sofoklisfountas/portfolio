@@ -5,8 +5,14 @@ html{
     overflow-x: hidden;
 }
 
+body{
+    margin: 0;
+    padding: 0;
+}
+
 .bold{
     font-weight: 700;
+    
 }
 
 .medium{
@@ -20,9 +26,7 @@ html{
 html, body, * {
     font-family: 'Montserrat', sans-serif;
     font-size: 18px;
-    color: black;
-    margin: 0;
-    padding: 0;
+    color: black; 
 }
 
 main{
@@ -94,7 +98,7 @@ header {
 }
 
 #brand{
-    width: 50%;
+    width: 100%;
     display: flex;
 }
 
@@ -278,7 +282,7 @@ so I don't ruin the white-space of portfolio card-container */
     display: flex;
     align-items: center;
     text-align: center;
-    width: 600px;
+    width: 50%;
 }
 
 
@@ -288,7 +292,6 @@ so I don't ruin the white-space of portfolio card-container */
 .contact-content{
     display: flex;
     justify-content: center;
-    padding: 100px;
 }
 
 .form-container{
@@ -412,10 +415,12 @@ footer p{
 }
 
 @media only screen and (min-width: 768px) and (max-width: 1366px){
-
-    html, body, *{
+    body{
+        overflow-x: hidden;
+    }
+    
+    body, *{
         font-size: 14px;
-        /* background-color: rgb(118, 118, 182); */
     }
 
     h1 ,h1 span{
@@ -432,17 +437,28 @@ footer p{
 }
 
 @media only screen and (max-width: 1024px){
-    html, body, *{
+    body{
+        overflow-x: hidden;
+    }
+    
+    body, *{
         font-size: 14px;
-        /* background-color: rgb(118, 118, 182); */
+    }
+
+    main{
+        padding: 0 2.5em 1em 2.5em;
     }
 
     h1 ,h1 span{
         font-size: 28px;
     }
 
+    .welcome-content{
+        margin: 0 auto;
+    }
+
     .welcome-content h1{
-         padding: 40px 0 10px;
+        padding: 40px 0 10px;
     }
 
     h2{
@@ -453,11 +469,15 @@ footer p{
         display: flex;
         justify-content: space-between;
         padding: 0 1em;
-        margin: 0 50px;
+        margin: 0 25px;
     }
 
     #myName{
-        font-size: 18px;
+        font-size: 15px;
+    }
+
+    .nav-bar{
+        width: 20%;
     }
 
     .nav-list{
@@ -468,8 +488,7 @@ footer p{
         height: 100%;
         z-index: 7;
         padding: 0 2em;
-        /* padding-top: 1em; */
-        background-color: rgba(117, 67, 255, 0.87);
+        background-color: #7543ffde;
     }
 
     .nav-item{
@@ -501,7 +520,7 @@ footer p{
     }
 
     .exit-btn{
-        margin: 30px 70px;
+        margin: 30px 45px;
         text-align: right;
     }
 
@@ -536,6 +555,11 @@ footer p{
         margin: 50px 0;
     }
 
+
+    .bio-text{
+        width: inherit;
+    }
+
   
 
   
@@ -544,14 +568,13 @@ footer p{
 }
 
 /* mobile view */
-@media only screen and (min-width : 360px) and (max-width: 768px){
+/* @media only screen and (min-width : 360px) and (max-width: 768px){
 
     html, body{
     }
 
     header{
-        /* padding: 0 2em 1em 2em; */
-        margin: 0 50px;
+        margin: 0 25px;
     }
 
     .nav-bar{
@@ -559,4 +582,4 @@ footer p{
     }
 
    
-}
+} */
