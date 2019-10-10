@@ -381,21 +381,27 @@ footer p{
 
 .personal-info{
     display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
     justify-content: space-between;
+    align-items: center;
     align-items: center;
     margin: 0 auto;
     width: 60%;
 }
 
-.personal-info-section{
-    display: flex;
-    align-items: center;
+.personal-info-section{   
     white-space: nowrap;
+    width: 200px;
+    display: flex;
+    justify-content: center;
 }
 
-.personal-info-section .title-p{
+
+
+/* .personal-info-section .title-p{
     margin-right: 15px;
-}
+} */
 
 .personal-info-section svg{
     width: 18px;
