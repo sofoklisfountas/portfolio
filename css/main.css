@@ -38,7 +38,7 @@ h1, h1 span{
     font-size: 50px;
 }
 
-h1 span{
+.nowrap{
     white-space: nowrap;
 }
 
@@ -321,10 +321,6 @@ form textarea{
     height: 96px;
 }
 
-form .button{
-    width: 300px;
-}
-
 .form-styling{
     background: #FFFFFF 0% 0% no-repeat padding-box;
     border: 1px solid #7443FF;
@@ -435,21 +431,120 @@ footer p{
 
 }
 
-@media only screen and (min-width : 720px) and (max-width: 1024px){
+@media only screen and (max-width: 1024px){
     html, body, *{
         font-size: 14px;
         /* background-color: rgb(118, 118, 182); */
     }
 
+    h1 ,h1 span{
+        font-size: 28px;
+    }
+
+    .welcome-content h1{
+         padding: 40px 0 10px;
+    }
+
+    h2{
+        font-size: 22px;
+    }
+
     header{
+        display: flex;
+        justify-content: space-between;
         padding: 0 1em;
         margin: 0 50px;
     }
 
+    #myName{
+        font-size: 18px;
+    }
+
+    .nav-list{
+        position: fixed;
+        width: 50%;
+        top: 0;
+        right: 0;
+        height: 100%;
+        z-index: 7;
+        padding: 0 2em;
+        /* padding-top: 1em; */
+        background-color: rgba(117, 67, 255, 0.87);
+    }
+
+    .nav-item{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        padding: 1em 0;
+        width: auto;
+    }
+
+    .nav-link{
+        padding: 0;
+        margin: 0;
+        color: white;
+        font-weight: 600px;
+    }
+
+    .nav-item a:hover {
+        font-weight: normal;
+        color:white;
+        border: none;
+    }
+
+    .hide-desktop{
+        display: block;
+        text-align: right;
+        transition: 500ms ease-in-out;
+    }
+
+    .exit-btn{
+        margin: 30px 70px;
+        text-align: right;
+    }
+
+    .exit-btn img:hover{
+        cursor: pointer;
+    }
+
+    .show-desktop{
+        display: block;
+        padding: 0;
+    }
+
+    .hide-mobile{
+        display: none;
+    }
+
+
+    .hero{
+        display: flex;
+        flex-direction: column-reverse;
+        align-items: center;
+        margin: 50px 0;
+        text-align: center;
+    }
+    
+    .hero img{
+        width: 150px;
+    }
+
+    .portfolio{
+        padding: 0;
+        margin: 50px 0;
+    }
+
+  
+
+  
+
+
 }
 
 /* mobile view */
-@media only screen and (min-width : 320px) and (max-width: 768px){
+@media only screen and (min-width : 360px) and (max-width: 768px){
 
     html, body{
     }
@@ -463,69 +558,5 @@ footer p{
 
     }
 
-    .nav-list{
-        position: fixed;
-        width: 60%;
-        top: 0;
-        right: 0;
-        height: 100%;
-        z-index: 7;
-        padding: 0 2em;
-        /* padding-top: 1em; */
-    }
-
-    .hide-desktop{
-        display: block;
-        text-align: right;
-    }
-
-    .exit-btn{
-        /* margin: 2.1em 3.5em; */
-        margin: 30px 55px;
-        text-align: right;
-    }
-
-    .exit-btn img:hover{
-        cursor: pointer;
-    }
-
-    /* Sizing of exit button icon */
-    .exit-btn img{
-        /* height: 40px; */
-    }
-
-    .show-desktop{
-        display: block;
-        padding: 0;
-    }
-
-    header{
-        /* width: 100%; */
-        display: flex;
-        justify-content: space-between;
-    }
-
-    .hide-mobile{
-        display: none;
-    }
-
-    .nav-item{
-        display: flex;
-        flex-direction: column;
-        justify-content: space-around;
-        align-items: center;
-        padding: 1em 0;
-    }
-
-    .nav-link{
-        padding: 0;
-        margin: 0;
-        color: #ebebeb;
-    }
-
-    .nav-item a:hover {
-        font-weight: normal;
-        color: #ebebeb;
-        border: none;
-    }
+   
 }
