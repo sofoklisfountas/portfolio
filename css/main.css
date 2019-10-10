@@ -5,7 +5,7 @@ html{
     overflow-x: hidden;
 }
 
-body{
+body, *{
     margin: 0;
     padding: 0;
 }
@@ -197,11 +197,6 @@ header {
 }
 
 
-
-
-.hero-img {
-}
-
 .hero-img img {
     float: right;
     width: 400px;
@@ -215,7 +210,7 @@ header {
 /* PORTFOLIO SECTION */
 
 .portfolio{
-    padding: 100px 0;
+    padding: 50px 0;
 }
 
 .portfolio h2, .portfolio p{ 
@@ -226,7 +221,7 @@ header {
 /* FOR TESTING */
 
 .cards-list{
-    margin: 5% 0;
+    margin: 50px;
     height: 18vw;
     display: flex;    
 }
@@ -244,7 +239,6 @@ so I don't ruin the white-space of portfolio card-container */
     background-size: cover;
     background-repeat: no-repeat;
     border-radius: 10px;
-
     cursor: pointer;
 }
 
@@ -260,12 +254,12 @@ so I don't ruin the white-space of portfolio card-container */
 }
 
 /* BIO SECTION */
-.bio h2{
-    text-align: center;
+.bio{
+    padding: 50px 0;
 }
 
 .bio-content{
-    padding: 100px 0;
+    padding-top: 50px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -275,7 +269,7 @@ so I don't ruin the white-space of portfolio card-container */
 .bio-img img{
     width: 150px;
     border-radius: 50%;
-    margin-bottom: 50px;
+    margin-bottom: 25px;
 }
 
 .bio-text{
@@ -288,10 +282,14 @@ so I don't ruin the white-space of portfolio card-container */
 
 
 /* CONTACT SECTION */
+.contact{
+    padding: 50px 0;
+}
 
 .contact-content{
     display: flex;
     justify-content: center;
+    padding-top: 50px;
 }
 
 .form-container{
@@ -415,8 +413,10 @@ footer p{
 }
 
 @media only screen and (min-width: 768px) and (max-width: 1366px){
+    
     body{
         overflow-x: hidden;
+      
     }
     
     body, *{
@@ -458,7 +458,11 @@ footer p{
     }
 
     .welcome-content h1{
-        padding: 40px 0 10px;
+        padding: 30px 0 5px;
+    }
+
+    .welcome-content .button{
+        margin: 100px 0;
     }
 
     h2{
@@ -477,7 +481,7 @@ footer p{
     }
 
     .nav-bar{
-        width: 20%;
+        width: 300px;
     }
 
     .nav-list{
@@ -488,39 +492,45 @@ footer p{
         height: 100%;
         z-index: 7;
         padding: 0 2em;
-        background-color: #7543ffde;
+        background-color: #7543fff5;
+        border-left: 5px solid #cec6ff;
+        border-radius: 25px 0 0 25px;
     }
 
     .nav-item{
         display: flex;
         flex-direction: column;
-        justify-content: space-around;
+        /* justify-content: space-around; */
         align-items: center;
+        margin: 0;
         padding: 1em 0;
         width: auto;
+        margin-top: 100px;
+        
     }
 
     .nav-link{
-        padding: 0;
-        margin: 0;
         color: white;
-        font-weight: 600px;
+        font-size: 1.4em;
     }
 
-    .nav-item a:hover {
+    .nav-item .nav-link:hover {
         font-weight: normal;
         color:white;
         border: none;
+        cursor: pointer;
+        /* font-weight: 500; */
     }
 
     .hide-desktop{
         display: block;
         text-align: right;
+        /* experimental */
         transition: 500ms ease-in-out;
     }
 
     .exit-btn{
-        margin: 30px 45px;
+        margin: 30px 60px;
         text-align: right;
     }
 
@@ -542,7 +552,7 @@ footer p{
         display: flex;
         flex-direction: column-reverse;
         align-items: center;
-        margin: 50px 0;
+        margin: 25px 0;
         text-align: center;
     }
     
@@ -550,15 +560,71 @@ footer p{
         width: 150px;
     }
 
+    /* PORTFOLIO SECTION */
+
+
     .portfolio{
         padding: 0;
-        margin: 50px 0;
+        padding: 25px 0;
     }
 
+    .cards-list{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: auto;
+        margin: 0;
+        /* width: 100%; */
+    }
+
+    .card{
+        width: 400px;
+        height: 300px;
+    }
+
+    .card:nth-child(2){
+        margin: 35px 0;
+    }
+
+  
+
+  
+
+    /* BIO SECTION */
 
     .bio-text{
         width: inherit;
     }
+
+
+    /* CONTACT SECTION */
+  
+    form{
+        width: 280px;
+    }
+
+
+    /* FOOTER SECTION */
+
+    footer{
+        height: 100px;
+        border-radius: 20px 20px 0 0 ;
+        border-top: 5px solid #cec6ff;
+    }
+
+    .personal-info{
+        padding: 50px;
+        display: flex;
+        flex-direction: column;
+        /* justify-content: center; */
+    }
+
+    .personal-info-section{
+        /* padding: 5px; */
+    }
+
+ 
 
   
 
