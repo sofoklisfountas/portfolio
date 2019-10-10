@@ -64,6 +64,19 @@ main {
     padding: 0 5em 2em 5em; /* defining container whitespace */
 }
 
+/* Call to action button styling */
+.button{
+    font-weight: bold;
+    /* color: white; */
+    /* background-color: #7443FF; */
+    width:163px;
+    height: 48px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+
 /* Navigation */
 
 .hide-desktop{
@@ -150,30 +163,37 @@ header {
 }
 
 .welcome-content .button{
+    
     margin-top: 30px;
-    transition: 1s;
-    transition-timing-function: cubic-bezier(.29, 1.01, 1, 1);
-}
-
-.welcome-content .button:hover{
-    background-color: rgb(138, 95, 255);
-    transition: 1s;
-    transition-timing-function: cubic-bezier(.29, 1.01, 1, 1);
-}
-
-
-
-/* Call to action button styling */
-.button{
-    font-weight: bold;
     color: white;
+    position: relative;
     background-color: #7443FF;
-    width:163px;
-    height: 48px;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
+    z-index: 1;
 }
+
+.welcome-content .button::before{
+    border-radius: 8px;
+
+    position: absolute;
+    content: "";
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-image: linear-gradient(to left,rgb(170, 67, 255), #df9930); 
+   
+    opacity: 0;
+    z-index: -1;
+    transition: opacity 0.3s linear;
+    
+}
+
+.welcome-content .button:hover::before{
+    opacity: 1;
+}
+
+
+
 
 .hero-img {
 }
@@ -311,7 +331,7 @@ form .button{
     border-radius: 5px;
     opacity: 1;
     padding-left: 10px;
-    background-color: rgba(147, 147, 148, 0.048);
+    background-color: rgba(73, 152, 255, 0.048);
     transition: 200ms ease-in-out;
 }
 
@@ -324,13 +344,13 @@ button:focus {
 
 form input:hover,form textarea:hover{
     box-shadow: 0 0 3px #7443FF;
-    transition: 200ms ease-in-out;
+    transition: 300ms ease-in-out;
 }
 
 form input:focus, form textarea:focus{
     box-shadow: 0 0 1px 1px #7443FF;
-    background-color: rgba(117, 67, 255, 0.089);
-    transition: 200ms ease-in-out;
+    background-color: rgba(91, 135, 255, 0.137);
+    transition: 300ms ease-in-out;
 
 }
 
