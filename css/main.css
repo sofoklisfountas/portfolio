@@ -614,10 +614,9 @@ footer p{
     }
 
     .personal-info{
-        padding: 50px;
         display: flex;
         flex-direction: column;
-        /* justify-content: center; */
+        justify-content: center;
     }
 
     .personal-info-section{
