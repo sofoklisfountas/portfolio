@@ -68,7 +68,7 @@ main {
     padding: 0 5em 2em 5em; /* defining container whitespace */
 }
 
-/* Call to action button styling */
+/* Button styling */
 .button{
     font-weight: bold;
     /* color: white; */
@@ -78,6 +78,10 @@ main {
     border: none;
     border-radius: 8px;
     cursor: pointer;
+    color: white;
+    position: relative;
+    background-color: #7443FF;
+    z-index: 0;
 }
 
 
@@ -177,12 +181,7 @@ header {
 }
 
 .welcome-content .button{
-    
     margin-top: 30px;
-    color: white;
-    position: relative;
-    background-color: #7443FF;
-    z-index: 0;
 }
 
 .welcome-content .button::before{
@@ -232,21 +231,24 @@ header {
 
 .cards-list{
     margin: 50px;
-    height: 18vw;
-    display: flex;    
+    width: 100%;
+    height: 340px;
+    display: flex;
+    justify-content: space-between;
+    margin: 0 auto;
 }
 
 /* Set margin on sides of middle child (li)
 so I don't ruin the white-space of portfolio card-container */
 .card:nth-child(2){
-    margin: 0 3%;
+    /* margin: 0 3%; */
 }
 
 .card{
     /* card styling */
     background-color: rgba(117, 67, 255, 0.486); /* bg color can be DELETED */
-    width: 100%;
     background-size: cover;
+    width: 30%;
     background-repeat: no-repeat;
     border-radius: 10px;
     cursor: pointer;
@@ -262,6 +264,56 @@ so I don't ruin the white-space of portfolio card-container */
 #card-3{
     background-image: url("../Images/portfolio-item 3.png");
 }
+
+.card-content{
+    position: relative;
+    display: block;
+    margin: 0 auto;
+    height: auto;
+    padding: 50px;
+    text-align: center;
+    opacity: 0;
+    transition: all 200ms ease-in-out;
+}
+
+.card::before{
+    content: '';
+    display: block;
+    position: relative;
+    background: rgb(255, 0, 255);
+    border-radius: 10px;
+    width: auto;
+    height: 100%;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    /* z-index: 100; */
+    opacity:0;
+    /* transition: all 200ms ease-in-out; */
+}
+
+.card:hover::before{
+    opacity: 1;
+    transition: all 200ms ease-in-out;
+}
+
+/* .card:hover .card-content{
+    opacity: 1;
+    transition: all 200ms ease-in-out;
+} */
+
+.card-title{
+    margin-bottom: 30px;
+    color: white;
+
+}
+
+.card-text{
+    color: white;
+
+}
+
 
 /* BIO SECTION */
 .bio{
