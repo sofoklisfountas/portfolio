@@ -654,8 +654,8 @@ footer p{
     }
 
     .card{
-        min-width: 50vw;
-        min-height: 40vw;
+        min-width: 70vw;
+        min-height: 55vw;
     }
 
     .card:nth-child(2){
