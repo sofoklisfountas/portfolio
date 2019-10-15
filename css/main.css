@@ -720,8 +720,9 @@ footer p{
     /* CONTACT SECTION */
   
     form{
-        width: 280px;
-    }
+        width: 70vw;
+        max-width: 500px;
+        }
 
 
     /* FOOTER SECTION */
