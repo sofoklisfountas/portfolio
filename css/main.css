@@ -12,7 +12,6 @@ body, *{
 
 .bold{
     font-weight: 700;
-    
 }
 
 .medium{
@@ -108,10 +107,12 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding-bottom: 30px;
-
+    /* padding-bottom: 30px; */
     position: sticky;
     top: 0;
+    background-color: white;
+    z-index: 10;
+
 }
 
 #brand{
@@ -126,20 +127,10 @@ header {
     white-space: nowrap;
 }
 
-.nav-bar {
-   width: 500px;
-   position: sticky;
-    top: 0;
-   
-   
-}
-
 .nav-list {
     display: flex;
     justify-content: flex-end;
     width: 500px;
-    position: sticky;
-    top: 0;  
 }
 
 .nav-item { 
@@ -147,13 +138,13 @@ header {
    text-align: right;
    white-space: nowrap;
    list-style-type: none;
-   margin-left: 25px;
+   margin-left: 50px;
    letter-spacing: 1px;
    position: sticky;
-    top: 0;
+   top: 0;
 
    /* the % width of the nav items, combined with a fixed width of the nav-bar help with bold on hover alignment issue */
-   width: 25%; 
+   /* width: 25%;  */
 }
 
 .nav-item a{
@@ -162,13 +153,10 @@ header {
 
 .nav-item a:hover {
     color: #7443FF;
-    font-weight: 700;
-    letter-spacing: 0.60px;
-    /* text-shadow: 0.5px 0 1.5px rgb(104, 66, 207); */
+    /* font-weight: 700; */
+    /* letter-spacing: 0.60px; */
+    text-shadow: 0.5px 0.5px 0.5px #7443FF, -0.3px -0.3px 0.5px #7443FF, 0.5px 0.5px 0.5px #7443FF;
     border-bottom: 3px solid #7443FF;
-
-    /* text-shadow: 0 0 0.6px #7443FF, 0 0 0.6px #7443FF, 0 0 0.6px #7443FF, 0 0 0.6px #7443FF, 0 0 0.6px #7443FF, 0 0 0.6px #7443FF, 0 0 0.6px #7443FF, 0 0 0.6px #7443FF, 0 0 0.6px #7443FF; */
-
 }
 
 
@@ -250,16 +238,17 @@ header {
 
 /* Set margin on sides of middle child (li)
 so I don't ruin the white-space of portfolio card-container */
-.card:nth-child(2){
+/* .card:nth-child(2){ */
     /* margin: 0 3%; */
-}
+/* } */
 
 .card{
     /* card styling */
     background-color: rgba(117, 67, 255, 0.486); /* bg color can be DELETED */
     background-size: cover;
     position: relative;
-    width: 30%;
+    width: 20vw;
+    height: 17vw;
     background-repeat: no-repeat;
     border-radius: 10px;
     cursor: pointer;
@@ -284,18 +273,14 @@ so I don't ruin the white-space of portfolio card-container */
     text-align: center;
     top: 3em;
     bottom: 1em;
-    left: 0em;
-    right: 0em;
-    /* z-index: 100; */
     opacity: 0;
-    /* transition: all 200ms ease-in-out; */
 }
 
 .card::before{
     content: '';
     display: block;
     position: absolute;
-    background: #810041;
+    background: #3c0569;
     border-radius: 10px;
     width: auto;
     height: 100%;
@@ -305,7 +290,6 @@ so I don't ruin the white-space of portfolio card-container */
     right: 0;
     z-index: 0;
     transform: scale(1, 0);
-    /* transition: all 200ms ease-in-out; */
 }
 
 .card:hover::before{
@@ -325,7 +309,7 @@ so I don't ruin the white-space of portfolio card-container */
 }
 
 .card-text{
-    color: white;
+    color: rgba(255, 255, 255, 0.733);
 
 }
 
@@ -369,10 +353,7 @@ so I don't ruin the white-space of portfolio card-container */
     padding-top: 50px;
 }
 
-.form-container{
-}
-
-.form-container div{
+.form-container form div{
     display: flex;
     flex-direction: column;
     margin-bottom: 30px;
@@ -501,7 +482,7 @@ footer p{
         overflow-x: hidden;
       
     }
-    
+
     body, *{
         font-size: 14px;
     }
@@ -513,9 +494,6 @@ footer p{
     .hero img{
         width: 300px;
     }
-
-
-
 
 }
 
@@ -555,6 +533,8 @@ footer p{
     header{
         display: flex;
         justify-content: space-between;
+        /* position: sticky; */
+        top: 0;
         padding: 0 1em;
         margin: 0 25px;
         z-index: 1;
@@ -565,18 +545,28 @@ footer p{
         font-size: 15px;
     }
 
+    .show-desktop{
+        /* display: block;
+        padding: 0; */
+    }
+
     .nav-bar{
-        width: 300px;
+        /* width: 600px; */
+        /* height: 100vh; */
+
     }
 
     .nav-list{
+        /* display: flex; */
+        flex-direction: column;
+        /* justify-content: space-around; */
         position: fixed;
         width: 70%;
+        height: 100vh;
+        min-height: 250px;
         top: 0;
         right: 0;
-        height: 100%;
-        
-        padding: 0 2em;
+
         background-color: #7543ff;
         border-left: 5px solid #cec6ff;
         border-radius: 25px 0 0 25px;
@@ -584,52 +574,90 @@ footer p{
 
     .nav-item{
         display: flex;
-        flex-direction: column;
-        /* justify-content: space-around; */
+        justify-content: center;
         align-items: center;
-        margin: 0;
+
+        top: 10px;
+        margin: 0 auto;
         padding: 1em 0;
-        width: auto;
-        margin-top: 100px;
+        height: 100vh;
+        width: 100%;
+
         
     }
 
     .nav-link{
-        color: white;
+        color: #ffffff;
         font-size: 2em;
         letter-spacing: 2px;
-        font-weight: 600;
-        
+        font-weight: 400;
+        width: 100%;
+        text-align: center;
+        transition: all 200ms ease-in-out 100ms;
     }
 
-    .nav-item .nav-link:hover {
+    .nav-item > .nav-link:hover {
         font-weight: normal;
-        color:white;
+        color: #7443FF;
         border: none;
         cursor: pointer;
-        /* font-weight: 500; */
+        text-shadow: 0.5px 0.5px 0.5px #7443FF, -0.3px -0.3px 0.5px #7443FF, 0.5px 0.5px 0.5px #7443FF;
+        transition: all 200ms ease-in-out 200ms;
     }
+
+    /* animation setup background color expand on nav-link hover */
+    .nav-link::before{
+        content: '';
+        display: block;
+        position: absolute;
+        width: 100%;
+        height: 19vh;
+        top: 5px;
+        bottom: 0;
+        left: 0;
+        right: 0;
+
+        background-color: rgb(255, 255, 255);
+        border-top: 3px solid #cec6ff;
+        border-bottom: 3px solid #cec6ff;
+        border-radius: 10px;
+        z-index: -1;
+        opacity:0;
+        transition: all 100ms ease-in-out;
+        transform: scaleX(0);
+    }
+
+    /* change opacity so the animation will take affect on hover */
+    .nav-link:hover::before{
+        opacity: 1;
+        transition: all 200ms ease-in-out;
+        transform: scaleX(1);
+    }
+
 
     .hide-desktop{
         display: block;
-        text-align: right;
+        /* text-align: right; */
         /* experimental */
         transition: 500ms ease-in-out;
     }
 
     .exit-btn{
+        position: sticky;
+        width:auto;
+        /* display: block; */
+        top: 30px;
+        right: 40px;
         margin: 30px 45px;
         text-align: right;
+        z-index: 1;
     }
 
     .exit-btn img:hover{
         cursor: pointer;
     }
 
-    .show-desktop{
-        display: block;
-        padding: 0;
-    }
+  
 
     .hide-mobile{
         display: none;
@@ -667,8 +695,11 @@ footer p{
     }
 
     .card{
-        width: 400px;
-        height: 300px;
+     
+        width: 70vw;
+        height: 55vw;
+        max-width: 450px;
+        max-height: 350px;
     }
 
     .card:nth-child(2){
@@ -706,33 +737,4 @@ footer p{
         flex-direction: column;
         justify-content: center;
     }
-
-    .personal-info-section{
-        /* padding: 5px; */
-    }
-
- 
-
-  
-
-  
-
-
 }
-
-/* mobile view */
-/* @media only screen and (min-width : 360px) and (max-width: 768px){
-
-    html, body{
-    }
-
-    header{
-        margin: 0 25px;
-    }
-
-    .nav-bar{
-
-    }
-
-   
-} */
