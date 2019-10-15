@@ -18,10 +18,10 @@
         <nav class="nav-bar">
             <ul class="nav-list show-desktop hide-mobile" id="nav">
                 <li class="exit-btn hide-desktop" id="exit"><img src="images/exit menu.svg" alt="exit menu"></li>
-                <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
-                <li class="nav-item"><a class="nav-link" href="#portfolio">Portfolio</a></li>
-                <li class="nav-item"><a class="nav-link" href="#bio">About me</a></li>
-                <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                <li class="nav-item"><a class="nav-link"  href="#home" onclick="closeNav()">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="#portfolio"  onclick="closeNav()">Portfolio</a></li>
+                <li class="nav-item"><a class="nav-link" href="#bio"  onclick="closeNav()">About me</a></li>
+                <li class="nav-item"><a class="nav-link" href="#contact"  onclick="closeNav()">Contact</a></li>
             </ul>
 
             <a class="hide-desktop" href="#">
@@ -147,6 +147,7 @@
         var menu = document.getElementById('menu');
         var nav = document.getElementById('nav');
         var exit = document.getElementById('exit');
+        var navLinks = document.getElementsByClassName('nav-link');
 
         menu.addEventListener('click', function(e){
             nav.classList.toggle('hide-mobile');
@@ -157,6 +158,14 @@
             nav.classList.add('hide-mobile');
             e.preventDefault();
         });
+
+
+
+        
+        function closeNav(){
+            nav.classList.add('hide-mobile');
+            e.preventDefault();
+        }
 
 
         
