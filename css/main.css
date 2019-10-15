@@ -351,8 +351,8 @@ so I don't ruin the white-space of portfolio card-container */
     justify-content: center;
     padding-top: 50px;
 }
-s
-.form-container div{
+
+.form-container form div{
     display: flex;
     flex-direction: column;
     margin-bottom: 30px;
@@ -580,7 +580,7 @@ footer p{
     }
 
     .nav-link{
-        color: white;
+        color: #CEC6FF;
         font-size: 2em;
         letter-spacing: 2px;
         font-weight: 500;
@@ -588,7 +588,7 @@ footer p{
 
     .nav-item .nav-link:hover {
         font-weight: normal;
-        color:white;
+        color:#ffffff;
         border: none;
         cursor: pointer;
         font-weight: 600;
