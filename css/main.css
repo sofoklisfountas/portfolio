@@ -2,7 +2,6 @@
 /* General */
 html{
     border-right: 5px solid #7443FF;
-    overflow-x: hidden;
     scroll-behavior: smooth;
 
 }
@@ -109,11 +108,13 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    /* padding-bottom: 30px; */
+    background-color: white;
+    z-index: 1;
+
+    /* Posittion sticky is a hybrid of fixed and relative position, so you have to specify a threshold (eg top)
+    Also, in order to work I have to remove overflow: hidden from any parent */
     position: sticky;
     top: 0;
-    background-color: white;
-    z-index: 10;
 
 }
 
@@ -142,8 +143,6 @@ header {
    list-style-type: none;
    margin-left: 50px;
    letter-spacing: 1px;
-   position: sticky;
-   top: 0;
 
    /* the % width of the nav items, combined with a fixed width of the nav-bar help with bold on hover alignment issue */
    /* width: 25%;  */
@@ -153,7 +152,8 @@ header {
     padding-bottom: 5px;
 }
 
-.nav-item a:hover {
+
+.nav-item a:hover{
     color: #7443FF;
     /* font-weight: 700; */
     /* letter-spacing: 0.60px; */
@@ -161,12 +161,16 @@ header {
     border-bottom: 3px solid #7443FF;
 }
 
+.active{
+    color: #7443FF;
+    text-shadow: 0.5px 0.5px 0.5px #7443FF, -0.3px -0.3px 0.5px #7443FF, 0.5px 0.5px 0.5px #7443FF;
+}
 
 /* HERO SECTION */
 
 .hero{
     /* height: 700px; */
-    margin: 100px 0 150px 0;
+    margin: 150px 0 150px 0;
     display: flex;
     justify-content: space-between;
     
@@ -286,7 +290,7 @@ header {
 /* PORTFOLIO SECTION */
 
 .portfolio{
-    padding: 300px 0 100px 0;
+    padding: 200px 0 0 0;
 }
 
 .portfolio h2, .portfolio p{ 
@@ -297,12 +301,12 @@ header {
 /* FOR TESTING */
 
 .cards-list{
-    margin: 50px;
     width: 100%;
-    height: 340px;
+    height: auto;
     display: flex;
     justify-content: space-between;
-    margin: 0 auto;
+    align-items: center;
+    margin: 100px auto;
 }
 
 .card{
@@ -379,7 +383,7 @@ header {
 
 /* BIO SECTION */
 .bio{
-    padding: 50px 0;
+    padding: 200px 0;
 }
 
 .bio-content{
@@ -603,8 +607,6 @@ footer p{
     header{
         display: flex;
         justify-content: space-between;
-        /* position: sticky; */
-        top: 0;
         padding: 0 1em;
         margin: 0 25px;
         z-index: 1;
@@ -706,15 +708,11 @@ footer p{
 
     .hide-desktop{
         display: block;
-        /* text-align: right; */
-        /* experimental */
         transition: 500ms ease-in-out;
     }
 
     .exit-btn{
-        position: sticky;
         width:auto;
-        /* display: block; */
         top: 30px;
         right: 40px;
         margin: 30px 45px;
