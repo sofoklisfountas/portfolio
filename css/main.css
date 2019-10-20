@@ -2,7 +2,8 @@
 /* General */
 html{
     border-right: 5px solid #7443FF;
-    overflow-x: hidden;
+    scroll-behavior: smooth;
+
 }
 
 body, *{
@@ -24,6 +25,11 @@ body, *{
 
 .ta-center{
     text-align: center;
+}
+
+.shadow-bottom{
+    box-shadow: 0px 1px 20px -5px #ac9bc4;
+    transition: all 500ms ease-in-out;
 }
 
 html, body, * {
@@ -101,18 +107,20 @@ main {
 }
 
 header {
-    /* width: 85.4%; */
-    margin:0 140px; /* defining container whitespace */
+    margin: auto auto;
+    padding: 0 100px;
     height: 90px;;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    /* padding-bottom: 30px; */
+    background-color: white;
+    z-index: 1;
+
+    /* Posittion sticky is a hybrid of fixed and relative position, so you have to specify a threshold (eg top)
+    Also, in order to work I have to remove overflow: hidden from any parent */
     position: sticky;
     top: 0;
-    background-color: white;
-    z-index: 10;
-
+    transition: all 500ms ease-in-out;
 }
 
 #brand{
@@ -133,41 +141,42 @@ header {
     width: 500px;
 }
 
-.nav-item { 
+.nav-item {
    display: block;
    text-align: right;
    white-space: nowrap;
    list-style-type: none;
    margin-left: 50px;
    letter-spacing: 1px;
-   position: sticky;
-   top: 0;
+   /* position: sticky;
+   top: 0; */
 
    /* the % width of the nav items, combined with a fixed width of the nav-bar help with bold on hover alignment issue */
-   /* width: 25%;  */
+   /* width: 25%; */
 }
 
-.nav-item a{
+.nav-link{
     padding-bottom: 5px;
 }
 
-.nav-item a:hover {
+
+.nav-link:hover{
     color: #7443FF;
-    /* font-weight: 700; */
-    /* letter-spacing: 0.60px; */
     text-shadow: 0.5px 0.5px 0.5px #7443FF, -0.3px -0.3px 0.5px #7443FF, 0.5px 0.5px 0.5px #7443FF;
     border-bottom: 3px solid #7443FF;
 }
 
+.active{
+    color: #7443FF;
+    text-shadow: 0.5px 0.5px 0.5px #7443FF, -0.3px -0.3px 0.5px #7443FF, 0.5px 0.5px 0.5px #7443FF;
+}
 
 /* HERO SECTION */
 
 .hero{
-    /* height: 700px; */
-    margin: 100px 0 150px 0;
+    margin: 150px 0 150px 0;
     display: flex;
     justify-content: space-between;
-    
 }
 
 .welcome-content{
@@ -175,11 +184,11 @@ header {
 }
 
 .welcome-content h1{
-    padding: 80px 0 20px 0;
+    padding: 80px 0 10px 0;
 }
 
 .welcome-content .button{
-    margin-top: 30px;
+    margin-top: 70px;
 }
 
 .welcome-content .button::before{
@@ -209,38 +218,98 @@ header {
     width: 400px;
 }
 
+
 .scroll-btn{
-    text-align: center;
-    margin: 150px 0; 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    left: calc(50% - 53px);
+    /* top: calc(100vh - 10%); */
+    
 }
+
+.scroll-btn a {
+    padding-top: 70px;
+    bottom: 20px;
+    display: inline-block;
+    -webkit-transform: translate(0, -50%);
+    transform: translate(0, -50%);
+    color: #000000;
+    transition: all 500ms ease-in-out;
+  }
+
+.scroll-btn a:hover{
+    opacity: 0.3;
+    transition: all 500ms ease-in-out;
+} 
+
+/* Scroll arrow styling and animation*/
+.scroll-btn a span {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 24px;
+    height: 24px;
+    margin-left: -12px;
+    border-left: 3px solid #000000;
+    border-bottom: 3px solid #000000;
+    -webkit-transform: rotateZ(-45deg);
+    transform: rotateZ(-45deg);
+    -webkit-animation: sdb06 1.5s infinite;
+    animation: sdb06 2.0s infinite;
+    box-sizing: border-box;
+  }
+
+  @-webkit-keyframes sdb06 {
+    0% {
+      -webkit-transform: rotateY(0) rotateZ(-45deg) translate(0, 0);
+      opacity: 0;
+    }
+    70% {
+      opacity: 1;
+    }
+    100% {
+      -webkit-transform: rotateY(720deg) rotateZ(-45deg) translate(-20px, 20px);
+      opacity: 0;
+    }
+  }
+  @keyframes sdb06 {
+    0% {
+      transform: rotateY(0) rotateZ(-45deg) translate(0, 0);
+      opacity: 0;
+    }
+    50% {
+      opacity: 1;
+    }
+    100% {
+      transform: rotateY(720deg) rotateZ(-45deg) translate(-20px, 20px);
+      opacity: 0;
+    }
+  }
 
 /* PORTFOLIO SECTION */
 
 .portfolio{
-    padding: 50px 0;
+    padding: 200px 0 0 0;
 }
 
 .portfolio h2, .portfolio p{ 
     text-align: center;
-    padding-bottom: 15px;
+    padding-bottom: 10px;
 }
 
 /* FOR TESTING */
 
 .cards-list{
-    margin: 50px;
     width: 100%;
-    height: 340px;
+    height: auto;
     display: flex;
     justify-content: space-between;
-    margin: 0 auto;
+    align-items: center;
+    margin: 100px auto;
 }
-
-/* Set margin on sides of middle child (li)
-so I don't ruin the white-space of portfolio card-container */
-/* .card:nth-child(2){ */
-    /* margin: 0 3%; */
-/* } */
 
 .card{
     /* card styling */
@@ -316,7 +385,7 @@ so I don't ruin the white-space of portfolio card-container */
 
 /* BIO SECTION */
 .bio{
-    padding: 50px 0;
+    padding: 200px 0;
 }
 
 .bio-content{
@@ -443,9 +512,8 @@ footer p{
     flex-wrap: nowrap;
     justify-content: space-between;
     align-items: center;
-    align-items: center;
     margin: 0 auto;
-    width: 60%;
+    width: 60vw;
 }
 
 .personal-info-section{   
@@ -453,27 +521,27 @@ footer p{
     width: 200px;
     display: flex;
     justify-content: center;
+    align-items: center;
 }
 
-
-
-/* .personal-info-section .title-p{
-    margin-right: 15px;
-} */
-
 .personal-info-section svg{
-    width: 18px;
-    height: 18px;
+    float: right;
+    width: auto;
+    height: 30px;
     fill: #FFFFFF;
+    border-radius: 5px;
     margin-top: 5px;
-    margin-right: 10px;
+    margin-left: 15px;
     transition: 200ms ease-in-out;
     cursor: pointer;
 }
 
 .personal-info-section svg:hover{
     transition: 200ms ease-in-out;
-    fill: rgb(33, 0, 63);
+    background-color: white;
+    box-shadow: 0.5px 0.5px 0.7px #ffffff, -0.5px -0.5px 0.7px #ffffff;
+    transform: scale(1.3, 1.3);
+    fill: #7443FF;
 }
 
 @media only screen and (min-width: 768px) and (max-width: 1366px){
@@ -493,6 +561,14 @@ footer p{
 
     .hero img{
         width: 300px;
+    }
+
+    .portfolio{
+        padding: 150px 0 0 0;
+    }
+
+    .cards-list{
+        align-items: center;
     }
 
 }
@@ -531,14 +607,7 @@ footer p{
     }
 
     header{
-        display: flex;
-        justify-content: space-between;
-        /* position: sticky; */
-        top: 0;
-        padding: 0 1em;
-        margin: 0 25px;
-        z-index: 1;
-
+        padding: 0 3em;
     }
 
     #myName{
@@ -546,22 +615,17 @@ footer p{
     }
 
     .show-desktop{
-        /* display: block;
-        padding: 0; */
     }
 
     .nav-bar{
-        /* width: 600px; */
-        /* height: 100vh; */
-
     }
 
     .nav-list{
-        /* display: flex; */
         flex-direction: column;
-        /* justify-content: space-around; */
         position: fixed;
-        width: 70%;
+       
+        width: 40vw;
+        min-width: 300px;
         height: 100vh;
         min-height: 250px;
         top: 0;
@@ -576,47 +640,37 @@ footer p{
         display: flex;
         justify-content: center;
         align-items: center;
-
         top: 10px;
-        margin: 0 auto;
-        padding: 1em 0;
+        margin: 1em auto;
+        /* padding: 1em 0; */
         height: 100vh;
         width: 100%;
-
-        
     }
 
     .nav-link{
+        padding: 0;
+        position: absolute;
         color: #ffffff;
-        font-size: 2em;
+        font-size: 1.5em;
         letter-spacing: 2px;
-        font-weight: 400;
         width: 100%;
         text-align: center;
         transition: all 200ms ease-in-out 100ms;
+        /* display: contents; */
     }
 
-    .nav-item > .nav-link:hover {
-        font-weight: normal;
-        color: #7443FF;
-        border: none;
-        cursor: pointer;
-        text-shadow: 0.5px 0.5px 0.5px #7443FF, -0.3px -0.3px 0.5px #7443FF, 0.5px 0.5px 0.5px #7443FF;
-        transition: all 200ms ease-in-out 200ms;
-    }
-
-    /* animation setup background color expand on nav-link hover */
-    .nav-link::before{
+   
+    /* animation setup: background color expand on nav-item hover */
+    .nav-item::before{
         content: '';
         display: block;
-        position: absolute;
+        position: relative;
         width: 100%;
-        height: 19vh;
-        top: 5px;
+        height: 10vh;
+        top: 0;
         bottom: 0;
         left: 0;
         right: 0;
-
         background-color: rgb(255, 255, 255);
         border-top: 3px solid #cec6ff;
         border-bottom: 3px solid #cec6ff;
@@ -628,24 +682,29 @@ footer p{
     }
 
     /* change opacity so the animation will take affect on hover */
-    .nav-link:hover::before{
+    .nav-item:hover::before{
         opacity: 1;
         transition: all 200ms ease-in-out;
         transform: scaleX(1);
     }
 
+    /* change nav-link style on nav-item hover */
+    .nav-item:hover .nav-link{
+        color: #7443FF;
+        border: none;
+        cursor: pointer;
+        text-shadow: 0.5px 0.5px 0.5px #7443FF, -0.3px -0.3px 0.5px #7443FF, 0.5px 0.5px 0.5px #7443FF;
+        transition: color 200ms ease-in-out;
+    }
+
 
     .hide-desktop{
         display: block;
-        /* text-align: right; */
-        /* experimental */
         transition: 500ms ease-in-out;
     }
 
     .exit-btn{
-        position: sticky;
         width:auto;
-        /* display: block; */
         top: 30px;
         right: 40px;
         margin: 30px 45px;
@@ -720,8 +779,9 @@ footer p{
     /* CONTACT SECTION */
   
     form{
-        width: 280px;
-    }
+        width: 70vw;
+        max-width: 500px;
+        }
 
 
     /* FOOTER SECTION */
