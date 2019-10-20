@@ -148,19 +148,14 @@ header {
    list-style-type: none;
    margin-left: 50px;
    letter-spacing: 1px;
-   /* position: sticky;
-   top: 0; */
-
-   /* the % width of the nav items, combined with a fixed width of the nav-bar help with bold on hover alignment issue */
-   /* width: 25%; */
 }
 
 .nav-link{
     padding-bottom: 5px;
 }
 
-
 .nav-link:hover{
+
     color: #7443FF;
     text-shadow: 0.5px 0.5px 0.5px #7443FF, -0.3px -0.3px 0.5px #7443FF, 0.5px 0.5px 0.5px #7443FF;
     border-bottom: 3px solid #7443FF;
@@ -622,8 +617,7 @@ footer p{
 
     .nav-list{
         flex-direction: column;
-        position: fixed;
-       
+        position: fixed;       
         width: 40vw;
         min-width: 300px;
         height: 100vh;
