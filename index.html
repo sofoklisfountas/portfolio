@@ -8,7 +8,7 @@
     <title>SF_Portfolio</title>
 </head>
 <body>
-    <header>
+    <header id="home">
 
         <div id="brand">
             <div id="logo">#</div>
@@ -30,7 +30,7 @@
         </nav>
     </header>
     <main>
-        <section id="home" class="hero">
+        <section class="hero">
 
             <div class="welcome-content">
                 <h1>I'm Sofoklis, <span class="nowrap">a UI Developer</span></h1>
@@ -41,16 +41,17 @@
             <div class="hero-img">
                 <img src="Images/PinClipart.com_nutshell-clipart_3222623.png">
             </div>
-
-            
         </section>
 
+        
         <div class="scroll-btn hide-mobile" id="scroll-btn">
-            <span>Scroll down</span>
+            <a href="#portfolio">Scroll down<span></span></a>
         </div>
 
-        <section class="portfolio">
-            <h2 id="portfolio">Portfolio</h2>
+        
+
+        <section class="portfolio" id="portfolio">
+            <h2>Portfolio</h2>
             <p>Take a look at my work</p>
 
             <ul class="cards-list">
@@ -75,8 +76,8 @@
             </ul>
         </section> 
 
-        <section class="bio">
-            <h2 class="ta-center" id="bio">About me</h2>
+        <section class="bio" id="bio">
+            <h2 class="ta-center">About me</h2>
 
             <div class="bio-content">
                 <div class="bio-img"><img src="/Images/me-rect.png"></div>
@@ -144,10 +145,13 @@
 </body>
     <script>
 
-        var menu = document.getElementById('menu');
-        var nav = document.getElementById('nav');
-        var exit = document.getElementById('exit');
-        var navLinks = document.getElementsByClassName('nav-link');
+        var menu = document.getElementById('menu')
+        var exit = document.getElementById('exit')
+        var header = document.querySelector("header")
+        var nav = document.getElementById('nav')
+        var navLinks = document.getElementsByClassName('nav-link')
+        
+        
 
         menu.addEventListener('click', function(e){
             nav.classList.toggle('hide-mobile');
@@ -158,9 +162,6 @@
             nav.classList.add('hide-mobile');
             e.preventDefault();
         });
-
-
-
         
         function closeNav(){
             nav.classList.add('hide-mobile');
@@ -168,6 +169,55 @@
         }
 
 
+
+        //Set active state on navigation menu item when section is on viewport
+        window.onscroll = function changeClass(){
+            var scrollPosY = window.pageYOffset | document.body.scrollTop;
+        }
+
+        // / Set active state of navigation menu item when clicked
+        function setActive(){
+            for (var i = 0; i < navLinks.length; i++) {
+                navLinks[i].addEventListener("click", function() {
+                var current = document.getElementsByClassName("active");
+                if (current.length > 0) { 
+                    current[0].className = current[0].className.replace(" active", "");
+                }
+                this.className += "active";
+                });
+            }
+        }
+
+        let scrollpos = window.scrollY
+        const home = document.querySelector("nav")
+        const home_height = home.offsetHeight
+
+        const add_class_on_scroll = () => home.classList.add("active");
+        const remove_class_on_scroll = () => home.classList.remove("active")
+        window.addEventListener('scroll', function() { 
+            // alert(home)
+            scrollpos = window.scrollY;
+            if (scrollpos >= home_height) { 
+                // add_class_on_scroll();
+                header.classList.add("shadow-bottom"); 
+                header.classList.add("scrolled");}
+            else { remove_class_on_scroll()
+                header.classList.remove("shadow-bottom"); 
+                header.classList.remove("scrolled"); }
+            console.log(scrollpos)
+        })
+
+        $(function () {
+            $(document).scroll(function () {
+	            var $header = $("header");
+	            $header.toggleClass('scrolled', $(this).scrollTop() > $header.height());
+	        });
+        });
+
+        // Add active class to the current button (highlight it)
+        // var nav = document.getElementById("nav");
+        // var navLinks = nav.getElementsByClassName("btn");
+        
         
     </script>
 
