@@ -145,13 +145,11 @@
 </body>
     <script>
 
-        var menu = document.getElementById('menu');
-        var exit = document.getElementById('exit');
-
-        var nav = document.getElementById('nav');
-        var navLinks = document.getElementsByClassName('nav-link');
-        
-        
+        var menu = document.getElementById('menu')
+        var exit = document.getElementById('exit')
+        var header = document.querySelector("header")
+        var nav = document.getElementById('nav')
+        var navLinks = document.getElementsByClassName('nav-link')
 
         menu.addEventListener('click', function(e){
             nav.classList.toggle('hide-mobile');
@@ -173,24 +171,7 @@
         //Set active state on navigation menu item when section is on viewport
         window.onscroll = function changeClass(){
             var scrollPosY = window.pageYOffset | document.body.scrollTop;
-            // alert("Its scroolliiiiing!");
         }
-
-
-        let scrollpos = window.scrollY
-        const home = document.querySelector("ul")
-        const home_height = home.offsetHeight
-
-        const add_class_on_scroll = () => home.classList.add("active");
-        const remove_class_on_scroll = () => home.classList.remove("active")
-        window.addEventListener('scroll', function() { 
-            // alert(home)
-            scrollpos = window.scrollY;
-            if (scrollpos >= home_height) { add_class_on_scroll() }
-            else { remove_class_on_scroll() }
-            console.log(scrollpos)
-        })
-
 
         // / Set active state of navigation menu item when clicked
         function setActive(){
@@ -200,10 +181,36 @@
                 if (current.length > 0) { 
                     current[0].className = current[0].className.replace(" active", "");
                 }
-                this.className += " active";
+                this.className += "active";
                 });
             }
         }
+
+        let scrollpos = window.scrollY
+        const home = document.querySelector("nav")
+        const home_height = home.offsetHeight
+
+        const add_class_on_scroll = () => home.classList.add("active");
+        const remove_class_on_scroll = () => home.classList.remove("active")
+        window.addEventListener('scroll', function() { 
+            // alert(home)
+            scrollpos = window.scrollY;
+            if (scrollpos >= home_height) { 
+                // add_class_on_scroll();
+                header.classList.add("shadow-bottom"); 
+                header.classList.add("scrolled");}
+            else { remove_class_on_scroll()
+                header.classList.remove("shadow-bottom"); 
+                header.classList.remove("scrolled"); }
+            console.log(scrollpos)
+        })
+
+        $(function () {
+            $(document).scroll(function () {
+	            var $header = $("header");
+	            $header.toggleClass('scrolled', $(this).scrollTop() > $header.height());
+	        });
+        });
         // Add active class to the current button (highlight it)
         // var nav = document.getElementById("nav");
         // var navLinks = nav.getElementsByClassName("btn");
