@@ -27,6 +27,11 @@ body, *{
     text-align: center;
 }
 
+.shadow-bottom{
+    box-shadow: 0px 1px 20px -5px #ac9bc4;
+    transition: all 500ms ease-in-out;
+}
+
 html, body, * {
     font-family: 'Montserrat', sans-serif;
     font-size: 18px;
@@ -103,7 +108,10 @@ main {
 
 header {
     /* width: 85.4%; */
-    margin:0 140px; /* defining container whitespace */
+    /* defining container whitespace */
+    /* width: 80vw; */
+    margin: auto auto;
+    padding: 0 100px;
     height: 90px;;
     display: flex;
     justify-content: space-between;
@@ -115,8 +123,26 @@ header {
     Also, in order to work I have to remove overflow: hidden from any parent */
     position: sticky;
     top: 0;
-
+    transition: all 500ms ease-in-out;
 }
+
+/* .scrolled{
+    background-color: #7443FF;
+    border-bottom: 5px solid #cec6ff;
+    border-radius: 0 0 25px 25px;
+    transition: all 500ms ease-in-out;
+} */
+
+/* .scrolled .nav-link,.scrolled #myName, .scrolled #logo{
+    color: white;
+}
+
+.scrolled .nav-link:hover{
+    color: #ffffff;
+    text-shadow: 0.5px 0.5px 0.5px #ffffff, -0.3px -0.3px 0.5px #ffffff, 0.5px 0.5px 0.5px #ffffff;
+    border-bottom: 3px solid #ffffff;
+    transition: all 200ms ease-in-out;
+} */
 
 #brand{
     width: 100%;
@@ -173,7 +199,6 @@ header {
     margin: 150px 0 150px 0;
     display: flex;
     justify-content: space-between;
-    
 }
 
 .welcome-content{
@@ -230,7 +255,6 @@ header {
 .scroll-btn a {
     padding-top: 70px;
     bottom: 20px;
-    z-index: 2;
     display: inline-block;
     -webkit-transform: translate(0, -50%);
     transform: translate(0, -50%);
@@ -605,12 +629,7 @@ footer p{
     }
 
     header{
-        display: flex;
-        justify-content: space-between;
-        padding: 0 1em;
-        margin: 0 25px;
-        z-index: 1;
-
+        padding: 0 3em;
     }
 
     #myName{
