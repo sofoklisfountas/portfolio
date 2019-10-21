@@ -3,7 +3,7 @@
 html{
     border-right: 5px solid #7443FF;
     scroll-behavior: smooth;
-
+    overflow-x: hidden;
 }
 
 body, *{
@@ -169,7 +169,7 @@ header {
 .active{
     color: #7443FF;
     text-shadow: 0.5px 0.5px 0.5px #7443FF, -0.3px -0.3px 0.5px #7443FF, 0.5px 0.5px 0.5px #7443FF;
-    transition: all 500ms ease-in-out;
+    /* transition: 50ms; */
 }
 
 /* HERO SECTION */
