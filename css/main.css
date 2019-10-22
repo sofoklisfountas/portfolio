@@ -671,7 +671,7 @@ footer p{
         letter-spacing: 2px;
         width: 100%;
         text-align: center;
-        transition: all 200ms ease-in-out 100ms;
+        transition: 150ms;
         /* display: contents; */
     }
 
@@ -716,7 +716,7 @@ footer p{
     .active{
         color:white;
         font-weight: 700;
-        text-shadow: 0.5px 0.5px 0.5px white, -0.3px -0.3px 0.5px white, 0.5px 0.5px 0.5px white;
+        /* text-shadow: 0.5px 0.5px 0.5px white, -0.3px -0.3px 0.5px white, 0.5px 0.5px 0.5px white; */
     }
 
 
