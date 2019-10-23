@@ -115,7 +115,7 @@
                                   <button type="submit">Send</button>
                                 </p>
                               </form> -->
-                    <form id="form" name="contact" method="POST" data-netlify="true">
+                    <form id="form" name="contact" method="POST" action="POST" data-netlify="true">
                 
                     <div>
                         <label for="name" class="medium">First Name</label>
@@ -167,14 +167,14 @@
     <script>
 
 
-        var form = document.getElementById('form');
-        form.onsubmit = function(e) {
-            e.preventDefault();
-            console.log(form.name.value);
-            console.log(form.email.value);
-            console.log(form.message.value);
-            // console.log(form.value);
-        };
+        // var form = document.getElementById('form');
+        // form.onsubmit = function(e) {
+        //     e.preventDefault();
+        //     console.log(form.name.value);
+        //     console.log(form.email.value);
+        //     console.log(form.message.value);
+        //     // console.log(form.value);
+        // };
 
         var menu = document.getElementById('menu')
         var exit = document.getElementById('exit')
