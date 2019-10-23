@@ -1,5 +1,11 @@
 @import url('https://fonts.googleapis.com/css?family=Montserrat:200,300,400,500,600,700&display=swap');
 /* General */
+.error{
+    background-color: red;
+    width: 100px;
+    height: 100px;
+}
+
 html{
     border-right: 5px solid #7443FF;
     scroll-behavior: smooth;

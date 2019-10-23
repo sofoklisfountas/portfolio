@@ -93,8 +93,14 @@
         <section class="contact" id="contact">
             <h2 class="ta-center" >Send me a message</h2>
             <div class="contact-content">
+<!-- 
+                <?php if($errorMsg != ''): ?>
+                    <div class="error <?php echo $errorMsgClass; ?>"><?php echo $errorMsg; ?></div>
+                <?php endif; ?> -->
+
+
                 <div class="form-container">
-                    <form id="form" action="contact-form.php" method="POST">
+                    <form id="form" action="POST" netlify>
                 
                     <div>
                         <label for="name" class="medium">First Name</label>
@@ -108,7 +114,7 @@
                         <label for="message" class="medium">Message</label>
                         <textarea id="message" class="form-styling" name="message" placeholder="Write something.." required></textarea>
                     </div>
-                    <input class="button" type="submit" value="Send">
+                    <input class="button" name="submit" type="submit" value="Send">
                 
                     </form>
                 </div>
