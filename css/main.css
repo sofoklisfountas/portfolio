@@ -3,7 +3,7 @@
 html{
     border-right: 5px solid #7443FF;
     scroll-behavior: smooth;
-    overflow-x: hidden;
+    /* overflow-x: hidden; */
 }
 
 body{
@@ -318,7 +318,7 @@ header {
 
 .card{
     /* card styling */
-    background-color: #7443FF; /* bg color can be DELETED */
+    /* background-color: #7443FF; bg color can be DELETED */
     background-size: cover;
     position: relative;
     width: 20vw;
@@ -329,9 +329,30 @@ header {
 }
 
 /* Portfolio image addition to the cards */
-#card-1{
+#card-1::after{
+    content: '';
+    display: block;
+    position: absolute;
+    border-radius: 10px;
+    width: auto;
+    height: 100%;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: -1;
+
     background-image: url(https://unsplash.it/500);
 }
+
+#card-1:hover::after{
+    filter: blur(5px);
+    animation: blurScale 200ms ease-in-out;
+    transition: all 600ms ease-in-out 0ms;
+}
+
+
+
 #card-2{
     background-image: url(https://unsplash.it/501);
 }
@@ -354,7 +375,7 @@ header {
     content: '';
     display: block;
     position: absolute;
-    background: #7443FF;
+    background: #5a2ed3af;
     border-radius: 10px;
     width: auto;
     height: 100%;

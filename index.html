@@ -94,7 +94,7 @@
             <h2 class="ta-center" >Send me a message</h2>
             <div class="contact-content">
                 <div class="form-container">
-                    <form method="POST" action="https://sofoklis-dev.netlify.com/contact-form.php">
+                    <form id="form" action="contact-form.php" method="POST">
                 
                     <div>
                         <label for="name" class="medium">First Name</label>
@@ -108,7 +108,7 @@
                         <label for="message" class="medium">Message</label>
                         <textarea id="message" class="form-styling" name="message" placeholder="Write something.." required></textarea>
                     </div>
-                    <button class="button" type="submit" value="Send">Send</button>
+                    <input class="button" type="submit" value="Send">
                 
                     </form>
                 </div>
@@ -145,13 +145,23 @@
 </body>
     <script>
 
+
+        var form = document.getElementById('form');
+        form.onsubmit = function(e) {
+            e.preventDefault();
+            console.log(form.name.value);
+            console.log(form.email.value);
+            console.log(form.message.value);
+            // console.log(form.value);
+        };
+
         var menu = document.getElementById('menu')
         var exit = document.getElementById('exit')
         var header = document.querySelector("header")
         var nav = document.getElementById('nav')
         var navLinks = document.getElementsByClassName('nav-link')
         var sections = document.querySelectorAll("#home, #portfolio, #bio, #contact");
-        console.log(sections);
+        // console.log(sections);
 
         var home = document.getElementById("home");
         var portfolio = document.getElementById("portfolio");
@@ -210,17 +220,17 @@
                 el.classList.remove("active");
             });
             elem.classList.add("active");
-            console.log("SET ACTIVE: "+elem.textContent)
+            // console.log("SET ACTIVE: "+elem.textContent)
         }
 
         // Section heights
-        // let scrollpos = window.scrollY;
+        let scrollpos = window.scrollY;
         const nav_height = nav.offsetHeight
         var position = window.pageYOffset;
        
         
         window.addEventListener('scroll', function() { 
-            let scrollpos = window.scrollY;
+            scrollpos = window.scrollY;
             position = window.pageYOffset;
 
             if (scrollpos > nav_height) { 
@@ -239,25 +249,10 @@
                 if(position >= sectionY){
                     setActive(navLink)
                 }
-                console.log(id+" href: "+navLink.getAttribute("href"))
-                console.log("posittion "+position+" sectionY"+sectionY)
-                
-                // return el;
+                // console.log(id+" href: "+navLink.getAttribute("href"))
+                // console.log("posittion "+position+" sectionY"+sectionY)
             });
 
-            // let position = window.pageYOffset;
-            // if(position >= getElementPos(home)){
-            //    setActive(navLinks[0])
-            // }
-            // if(position >= getElementPos(portfolio)){
-            //    setActive(navLinks[1])
-            // }
-            // if(position >= getElementPos(bio)){
-            //    setActive(navLinks[2])
-            // }
-            // if(position >= getElementPos(contact)){
-            //    setActive(navLinks[3])
-            // }
         })
         
         function getElementPos(elem) { // crossbrowser version
@@ -272,14 +267,7 @@
             return Math.round(box.top)*3;
         }
 
-        // var isInViewport = function (elem) {
-        //     var distance = elem.getBoundingClientRect();
-        //     return (
-        //         // distance.top >= 0 
-        //         // &&
-        //         distance.bottom <= (window.innerHeight || document.documentElement.clientHeight) 
-        //     );
-        // };
+
     </script>
 
 </html>
