@@ -93,29 +93,14 @@
         <section class="contact" id="contact">
             <h2 class="ta-center" >Send me a message</h2>
             <div class="contact-content">
-                <div class="form-container">
 
-                        <!-- <form name="contact" method="POST" data-netlify="true">
-                                <p>
-                                  <label>Your Name: <input type="text" name="name" /></label>   
-                                </p>
-                                <p>
-                                  <label>Your Email: <input type="email" name="email" /></label>
-                                </p>
-                                <p>
-                                  <label>Your Role: <select name="role[]" multiple>
-                                    <option value="leader">Leader</option>
-                                    <option value="follower">Follower</option>
-                                  </select></label>
-                                </p>
-                                <p>
-                                  <label>Message: <textarea name="message"></textarea></label>
-                                </p>
-                                <p>
-                                  <button type="submit">Send</button>
-                                </p>
-                              </form> -->
-                    <form id="form" name="contact" method="POST" action="POST" data-netlify="true">
+                <?php if($errorMsg != ''): ?>
+                    <div class="error <?php echo $errorMsgClass; ?>"><?php echo $errorMsg; ?></div>
+                <?php endif; ?>
+
+
+                <div class="form-container">
+                    <form id="form" action="<?php echo $_SERVER['PHP_SELF']; ?>" method="POST">
                 
                     <div>
                         <label for="name" class="medium">First Name</label>
@@ -129,7 +114,7 @@
                         <label for="message" class="medium">Message</label>
                         <textarea id="message" class="form-styling" name="message" placeholder="Write something.." required></textarea>
                     </div>
-                    <button class="button" name="submit" type="submit" value="Send">Send</button>
+                    <input class="button" name="submit" type="submit" value="Send">
                 
                     </form>
                 </div>
