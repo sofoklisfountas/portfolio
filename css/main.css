@@ -124,6 +124,7 @@ header {
     /* Posittion sticky is a hybrid of fixed and relative position, so you have to specify a threshold (eg top)
     Also, in order to work I have to remove overflow: hidden from any parent */
     position: sticky;
+    position: -webkit-sticky; /* Safari support */
     top: 0;
     transition: all 500ms ease-in-out;
 }
