@@ -93,14 +93,8 @@
         <section class="contact" id="contact">
             <h2 class="ta-center" >Send me a message</h2>
             <div class="contact-content">
-
-                <?php if($errorMsg != ''): ?>
-                    <div class="error <?php echo $errorMsgClass; ?>"><?php echo $errorMsg; ?></div>
-                <?php endif; ?>
-
-
                 <div class="form-container">
-                    <form id="form" action="/contact-form.php" method="POST">
+                    <form id="form" action="contact-form.php" method="POST">
                 
                     <div>
                         <label for="name" class="medium">First Name</label>
