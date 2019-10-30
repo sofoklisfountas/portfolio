@@ -23,7 +23,7 @@ body{
 main{
     width:71%;
     margin: 0 auto;
-    padding: 0 5em 2em 5em; /* defining container whitespace */
+    padding: 0 5em; /* defining container whitespace */
     overflow-x: hidden;
 }
 
@@ -456,7 +456,7 @@ header {
 
 /* CONTACT SECTION */
 .contact{
-    padding: 50px 0;
+    padding: 0 0 100px 0;
 }
 
 .contact-content{
@@ -612,8 +612,12 @@ footer p{
         padding: 150px 0 0 0;
     }
 
-    .cards-list{
+/*     .cards-list{
         align-items: center;
+    } */
+
+    .bio{
+        padding: 100px 0;
     }
 
 }
@@ -627,24 +631,14 @@ footer p{
     }
 
     main{
-        padding: 0 2.5em 1em 2.5em;
+        padding: 0 2.5em;
     }
 
     h1 ,h1 span{
         font-size: 28px;
     }
 
-    .welcome-content{
-        margin: 0 auto;
-    }
-
-    .welcome-content h1{
-        padding: 30px 0 5px;
-    }
-
-    .welcome-content .button{
-        margin: 100px 0;
-    }
+   
 
     h2{
         font-size: 22px;
@@ -691,7 +685,7 @@ footer p{
     }
 
     .nav-link{
-        padding: 0;
+        padding: 40px;
         position: absolute;
         color: #ffffff;
         font-size: 1.2em;
@@ -784,13 +778,25 @@ footer p{
     .hero img{
         width: 150px;
     }
+    
+
+     .welcome-content{
+        margin: 0 auto;
+    }
+
+    .welcome-content h1{
+        padding: 30px 0 5px;
+    }
+
+    .welcome-content .button{
+/*         margin: 100px 0 0 0 0; */
+    }
 
     /* PORTFOLIO SECTION */
 
 
     .portfolio{
-        padding: 0;
-        padding: 25px 0;
+        padding: 100px 0 0 0;
     }
 
     .cards-list{
@@ -799,7 +805,7 @@ footer p{
         justify-content: center;
         align-items: center;
         height: auto;
-        margin: 0;
+        margin: 50px 0 0 0;
         /* width: 100%; */
     }
 
@@ -814,10 +820,6 @@ footer p{
     .card:nth-child(2){
         margin: 35px 0;
     }
-
-  
-
-  
 
     /* BIO SECTION */
     .bio-text{
