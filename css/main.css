@@ -617,6 +617,10 @@ footer p{
     } */
 
     .bio{
+        padding: 100px 0 0 0;
+    }
+
+    .contact{
         padding: 100px 0;
     }
 
