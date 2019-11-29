@@ -1,12 +1,33 @@
 @import url('https://fonts.googleapis.com/css?family=Montserrat:200,300,400,500,600,700&display=swap');
 /* General */
+.error{
+    background-color: red;
+    width: 100px;
+    height: 100px;
+}
+
 html{
     border-right: 5px solid #7443FF;
     scroll-behavior: smooth;
-
 }
 
-body, *{
+html, body, * {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 18px;
+    color: black; 
+}
+
+body{
+}
+
+main{
+    width:71%;
+    margin: 0 auto;
+    padding: 0 5em; /* defining container whitespace */
+    overflow-x: hidden;
+}
+
+*{
     margin: 0;
     padding: 0;
 }
@@ -32,15 +53,9 @@ body, *{
     transition: all 500ms ease-in-out;
 }
 
-html, body, * {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 18px;
-    color: black; 
-}
-
-main{
-    width:71%;
-    margin: 0 auto;
+.scrolled{
+    height: 50px;
+    transition: all 500ms ease-out;
 }
 
 .show-desktop{
@@ -79,10 +94,6 @@ a {
     text-decoration: none; 
 }
 
-main {
-    padding: 0 5em 2em 5em; /* defining container whitespace */
-}
-
 /* Button styling */
 .button{
     font-weight: bold;
@@ -119,8 +130,9 @@ header {
     /* Posittion sticky is a hybrid of fixed and relative position, so you have to specify a threshold (eg top)
     Also, in order to work I have to remove overflow: hidden from any parent */
     position: sticky;
+    position: -webkit-sticky; /* Safari support */
     top: 0;
-    transition: all 500ms ease-in-out;
+    transition: all 200ms ease-out;
 }
 
 #brand{
@@ -164,6 +176,7 @@ header {
 .active{
     color: #7443FF;
     text-shadow: 0.5px 0.5px 0.5px #7443FF, -0.3px -0.3px 0.5px #7443FF, 0.5px 0.5px 0.5px #7443FF;
+    /* transition: 50ms; */
 }
 
 /* HERO SECTION */
@@ -308,7 +321,7 @@ header {
 
 .card{
     /* card styling */
-    background-color: rgba(117, 67, 255, 0.486); /* bg color can be DELETED */
+    /* background-color: #7443FF; bg color can be DELETED */
     background-size: cover;
     position: relative;
     width: 20vw;
@@ -320,13 +333,13 @@ header {
 
 /* Portfolio image addition to the cards */
 #card-1{
-    background-image: url("../Images/portfolio-item 1.png");
+    background-image: url(https://unsplash.it/500);
 }
 #card-2{
-    background-image: url("../Images/portfolio-item 2.png");
+    background-image: url(https://unsplash.it/501);
 }
 #card-3{
-    background-image: url("../Images/portfolio-item 3.png");
+    background-image: url(https://unsplash.it/502);
 }
 
 .card-content{
@@ -344,7 +357,7 @@ header {
     content: '';
     display: block;
     position: absolute;
-    background: #3c0569;
+    background: #5a2ed3af;
     border-radius: 10px;
     width: auto;
     height: 100%;
@@ -354,6 +367,8 @@ header {
     right: 0;
     z-index: 0;
     transform: scale(1, 0);
+    
+    transition: 200ms cubic-bezier(0, 0.01, 0, 0.54)
 }
 
 .card:hover::before{
@@ -361,20 +376,32 @@ header {
     transition: all 300ms ease-in-out;
 }
 
-.card:hover .card-content{
-    opacity: 1;
-    transition: all 400ms ease-in-out 200ms;
-}
-
 .card-title{
     margin-bottom: 50px;
     color: white;
-
+    transform: translateX(200px);
 }
 
 .card-text{
-    color: rgba(255, 255, 255, 0.733);
+    color: white;
+    transform: translateX(400px);
+}
 
+.card:hover .card-content{
+    opacity: 1;
+    transition: all 500ms cubic-bezier(0, -0.07, 0, 0.32) ;
+    transform: translateY(0px);
+}
+
+.card:hover .card-title{
+    opacity: 1;
+    transition:all 500ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    transform: translateY(0px);
+}
+.card:hover .card-text{
+    opacity: 1;
+    transition:all 500ms cubic-bezier(0.000000175, 0.485, .0000002, 1.3) 200ms;
+    transform: translateY(0px);
 }
 
 
@@ -408,7 +435,7 @@ header {
 
 /* CONTACT SECTION */
 .contact{
-    padding: 50px 0;
+    padding: 0 0 100px 0;
 }
 
 .contact-content{
@@ -531,8 +558,12 @@ footer p{
     cursor: pointer;
 }
 
-.personal-info-section svg:hover{
+.personal-info-section svg:hover , .personal-info p:hover{
     transition: 200ms ease-in-out;
+    /* padding: 2px; */
+    color: #7443FF;
+    font-weight: 600;
+    border-radius: 10px;
     background-color: white;
     box-shadow: 0.5px 0.5px 0.7px #ffffff, -0.5px -0.5px 0.7px #ffffff;
     transform: scale(1.3, 1.3);
@@ -541,9 +572,7 @@ footer p{
 
 @media only screen and (min-width: 768px) and (max-width: 1366px){
     
-    body{
-        overflow-x: hidden;
-      
+    body{      
     }
 
     body, *{
@@ -562,15 +591,22 @@ footer p{
         padding: 150px 0 0 0;
     }
 
-    .cards-list{
+/*     .cards-list{
         align-items: center;
+    } */
+
+    .bio{
+        padding: 100px 0 0 0;
+    }
+
+    .contact{
+        padding: 100px 0;
     }
 
 }
 
 @media only screen and (max-width: 1024px){
     body{
-        overflow-x: hidden;
     }
     
     body, *{
@@ -578,24 +614,14 @@ footer p{
     }
 
     main{
-        padding: 0 2.5em 1em 2.5em;
+        padding: 0 2.5em;
     }
 
     h1 ,h1 span{
         font-size: 28px;
     }
 
-    .welcome-content{
-        margin: 0 auto;
-    }
-
-    .welcome-content h1{
-        padding: 30px 0 5px;
-    }
-
-    .welcome-content .button{
-        margin: 100px 0;
-    }
+   
 
     h2{
         font-size: 22px;
@@ -619,13 +645,13 @@ footer p{
         flex-direction: column;
         position: fixed;       
         width: 40vw;
-        min-width: 300px;
+        min-width: 200px;
         height: 100vh;
         min-height: 250px;
         top: 0;
         right: 0;
 
-        background-color: #7543ff;
+        background-color: #7443ff;
         border-left: 5px solid #cec6ff;
         border-radius: 25px 0 0 25px;
     }
@@ -642,14 +668,14 @@ footer p{
     }
 
     .nav-link{
-        padding: 0;
+        padding: 40px;
         position: absolute;
         color: #ffffff;
-        font-size: 1.5em;
+        font-size: 1.2em;
         letter-spacing: 2px;
         width: 100%;
         text-align: center;
-        transition: all 200ms ease-in-out 100ms;
+        transition: 150ms;
         /* display: contents; */
     }
 
@@ -691,6 +717,13 @@ footer p{
         transition: color 200ms ease-in-out;
     }
 
+    .active{
+        color:white;
+        font-weight: 700;
+        font-size: 1.5em;
+        /* text-shadow: 0.5px 0.5px 0.5px white, -0.3px -0.3px 0.5px white, 0.5px 0.5px 0.5px white; */
+    }
+
 
     .hide-desktop{
         display: block;
@@ -728,13 +761,25 @@ footer p{
     .hero img{
         width: 150px;
     }
+    
+
+     .welcome-content{
+        margin: 0 auto;
+    }
+
+    .welcome-content h1{
+        padding: 30px 0 5px;
+    }
+
+    .welcome-content .button{
+/*         margin: 100px 0 0 0 0; */
+    }
 
     /* PORTFOLIO SECTION */
 
 
     .portfolio{
-        padding: 0;
-        padding: 25px 0;
+        padding: 100px 0 0 0;
     }
 
     .cards-list{
@@ -743,7 +788,7 @@ footer p{
         justify-content: center;
         align-items: center;
         height: auto;
-        margin: 0;
+        margin: 50px 0 0 0;
         /* width: 100%; */
     }
 
@@ -759,12 +804,7 @@ footer p{
         margin: 35px 0;
     }
 
-  
-
-  
-
     /* BIO SECTION */
-
     .bio-text{
         width: inherit;
     }

@@ -18,7 +18,7 @@
         <nav class="nav-bar">
             <ul class="nav-list show-desktop hide-mobile" id="nav">
                 <li class="exit-btn hide-desktop" id="exit"><img src="images/exit menu.svg" alt="exit menu"></li>
-                <li class="nav-item"><a class="nav-link"  href="#home" onclick="closeNav()">Home</a></li>
+                <li class="nav-item"><a class="nav-link active"  href="#home" onclick="closeNav()">Home</a></li>
                 <li class="nav-item"><a class="nav-link" href="#portfolio"  onclick="closeNav()">Portfolio</a></li>
                 <li class="nav-item"><a class="nav-link" href="#bio"  onclick="closeNav()">About me</a></li>
                 <li class="nav-item"><a class="nav-link" href="#contact"  onclick="closeNav()">Contact</a></li>
@@ -35,7 +35,7 @@
             <div class="welcome-content">
                 <h1>I'm Sofoklis, <span class="nowrap">a UI Developer</span></h1>
                 <p>Living in Prague, <span class="nowrap">former Java developer in T-mobile.</span></p>
-                <button class="button">Download CV</button>
+                <button id="download_resume" class="button" type="submit">Download CV</button>
             </div>
 
             <div class="hero-img">
@@ -90,29 +90,28 @@
             </div>
         </section>
 
-        <section class="contact">
-            <h2 class="ta-center" id="contact">Send me a message</h2>
+        <section class="contact" id="contact">
+            <h2 class="ta-center" >Send me a message</h2>
             <div class="contact-content">
                 <div class="form-container">
-                    <form action="action_page.php">
+                    <form id="form" action="POST" data-netlify="true">
                 
                     <div>
                         <label for="name" class="medium">First Name</label>
-                        <input type="text" id="name" class="form-styling" name="name"  placeholder="Your name..">
+                        <input type="text" id="name" class="form-styling" name="name"  placeholder="Your name.." required>
                     </div> 
                     <div>
                         <label for="email" class="medium">Email</label>
-                        <input type="email" id="email" class="form-styling" name="email" placeholder="Your email..">
+                        <input type="email" id="email" class="form-styling" name="email" placeholder="Your email.." required>
                     </div>
                     <div>
                         <label for="message" class="medium">Message</label>
-                        <textarea id="message" class="form-styling" name="message" placeholder="Write something.."></textarea>
+                        <textarea id="message" class="form-styling" name="message" placeholder="Write something.." required></textarea>
                     </div>
-                    <input class="button" type="submit" value="Send">
+                    <input class="button" name="submit" type="submit" value="Send">
                 
                     </form>
                 </div>
-            </div>
         </section>
     </main>
 
@@ -141,15 +140,43 @@
 
         </div>
     </footer>
+    </div>
 
 </body>
     <script>
+
+
+        // var form = document.getElementById('form');
+        // form.onsubmit = function(e) {
+        //     e.preventDefault();
+        //     console.log(form.name.value);
+        //     console.log(form.email.value);
+        //     console.log(form.message.value);
+        //     // console.log(form.value);
+        // };
 
         var menu = document.getElementById('menu')
         var exit = document.getElementById('exit')
         var header = document.querySelector("header")
         var nav = document.getElementById('nav')
         var navLinks = document.getElementsByClassName('nav-link')
+        var sections = document.querySelectorAll("#home, #portfolio, #bio, #contact");
+        // console.log(sections);
+
+        var home = document.getElementById("home");
+        var portfolio = document.getElementById("portfolio");
+        var bio = document.getElementById("bio");
+        var contact = document.getElementById("contact");
+
+        // Download Resume button
+        var download_btn = document.getElementById("download_resume");
+
+        // Download resume file on click
+        download_btn.addEventListener('click', e =>{
+            e.preventDefault();
+            window.location.href='resume.doc';
+        });
+
 
         menu.addEventListener('click', function(e){
             nav.classList.toggle('hide-mobile');
@@ -163,59 +190,84 @@
         
         function closeNav(){
             nav.classList.add('hide-mobile');
-            e.preventDefault();
+            // e.preventDefault();
         }
 
 
 
-        //Set active state on navigation menu item when section is on viewport
-        window.onscroll = function changeClass(){
-            var scrollPosY = window.pageYOffset | document.body.scrollTop;
-        }
+        // Set active state on navigation menu item when section is on viewport
+        // window.onscroll = function changeClass(){
+        //     var scrollPosY = window.pageYOffset | document.body.scrollTop;
+        //     console.log("ChangeClass: "+scrollPosY);
+        // }
 
         // / Set active state of navigation menu item when clicked
-        function setActive(){
-            for (var i = 0; i < navLinks.length; i++) {
-                navLinks[i].addEventListener("click", function() {
-                var current = document.getElementsByClassName("active");
-                if (current.length > 0) { 
-                    current[0].className = current[0].className.replace(" active", "");
-                }
-                this.className += "active";
-                });
-            }
+        // function setActiveOnClick(...navLinks){
+        //     for (var i = 0; i < navLinks.length; i++) {
+        //         navLinks[i].addEventListener("click", function() {
+        //         navLinks[i].classList.add("active");
+        //         var current = document.getElementsByClassName("active");
+        //         if (current.length > 0) { 
+        //             current[0].className = current[0].className.replace(" active", "");
+        //         }
+        //         this.className += " active";
+        //         });
+        //     }
+        // }
+
+        function setActive(elem){
+            [].forEach.call(navLinks, function(el){ 
+                el.classList.remove("active");
+            });
+            elem.classList.add("active");
+            // console.log("SET ACTIVE: "+elem.textContent)
         }
 
-        let scrollpos = window.scrollY
-        const home = document.querySelector("nav")
-        const home_height = home.offsetHeight
-
-        const add_class_on_scroll = () => home.classList.add("active");
-        const remove_class_on_scroll = () => home.classList.remove("active")
+        // Section heights
+        let scrollpos = window.scrollY;
+        const nav_height = nav.offsetHeight
+        var position = window.pageYOffset;
+       
+        
         window.addEventListener('scroll', function() { 
-            // alert(home)
             scrollpos = window.scrollY;
-            if (scrollpos >= home_height) { 
-                // add_class_on_scroll();
+            position = window.pageYOffset;
+
+            if (scrollpos > nav_height) { 
                 header.classList.add("shadow-bottom"); 
                 header.classList.add("scrolled");}
-            else { remove_class_on_scroll()
+            else { 
                 header.classList.remove("shadow-bottom"); 
-                header.classList.remove("scrolled"); }
-            console.log(scrollpos)
-        })
+                header.classList.remove("scrolled");
+            }
 
-        $(function () {
-            $(document).scroll(function () {
-	            var $header = $("header");
-	            $header.toggleClass('scrolled', $(this).scrollTop() > $header.height());
-	        });
-        });
-        // Add active class to the current button (highlight it)
-        // var nav = document.getElementById("nav");
-        // var navLinks = nav.getElementsByClassName("btn");
+            
+            [].forEach.call(sections, function(el){
+                let sectionY = getElementPos(el);
+                let id = el.id;
+                let navLink = document.querySelector('a[href="#'+id+'"]');
+                if(position >= sectionY){
+                    setActive(navLink)
+                }
+                // console.log(id+" href: "+navLink.getAttribute("href"))
+                // console.log("posittion "+position+" sectionY"+sectionY)
+            });
+
+        })
         
-        
+        function getElementPos(elem) { // crossbrowser version
+            var box = elem.getBoundingClientRect();
+            var body = document.body;
+            var docEl = document.documentElement;
+
+            var scrollTop = window.pageYOffset || docEl.scrollTop || body.scrollTop;
+            var clientTop = docEl.clientTop || body.clientTop || 0;
+            var top  = box.top +  scrollTop - clientTop;
+            
+            return Math.round(box.top)*3;
+        }
+
+
     </script>
 
 </html>
