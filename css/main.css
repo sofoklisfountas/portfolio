@@ -1,37 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Montserrat:200,300,400,500,600,700&display=swap');
-/* General */
-.error{
-    background-color: red;
-    width: 100px;
-    height: 100px;
-}
 
-html{
-    border-right: 5px solid #7443FF;
-    scroll-behavior: smooth;
-}
-
-html, body, * {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 18px;
-    color: black; 
-}
-
-body{
-}
-
-main{
-    width:71%;
-    margin: 0 auto;
-    padding: 0 5em; /* defining container whitespace */
-    overflow-x: hidden;
-}
-
-*{
-    margin: 0;
-    padding: 0;
-}
-
+/* General classes */
 .bold{
     font-weight: 700;
 }
@@ -62,6 +31,31 @@ main{
     display: block;
 }
 
+.nowrap{
+    white-space: nowrap;
+}
+
+/* General styling */
+html{
+    border-right: 5px solid #7443FF;
+    scroll-behavior: smooth;
+}
+
+html, body, * {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 18px;
+    color: black; 
+    margin: 0;
+    padding: 0;
+}
+
+main{
+    width:71%;
+    margin: 0 auto;
+    padding: 0 5em; /* defining container whitespace */
+    overflow-x: hidden;
+}
+
 h1, h1 span{
     font-size: 50px;
 }
@@ -73,12 +67,6 @@ h2{
 h3{
     font-size: 18px;
 }
-
-.nowrap{
-    white-space: nowrap;
-}
-
-
 
 p{
     line-height: 2;
@@ -108,9 +96,7 @@ a {
     z-index: 0;
 }
 
-
 /* Navigation */
-
 .hide-desktop{
     display: none;
 }
@@ -123,7 +109,7 @@ header {
     justify-content: space-between;
     align-items: center;
     background-color: white;
-    z-index: 1;
+    z-index: 2;
 
     /* Posittion sticky is a hybrid of fixed and relative position, so you have to specify a threshold (eg top)
     Also, in order to work I have to remove overflow: hidden from any parent */
@@ -165,7 +151,6 @@ header {
 }
 
 .nav-link:hover{
-
     color: #7443FF;
     text-shadow: 0.5px 0.5px 0.5px #7443FF, -0.3px -0.3px 0.5px #7443FF, 0.5px 0.5px 0.5px #7443FF;
     border-bottom: 3px solid #7443FF;
@@ -177,7 +162,6 @@ header {
 }
 
 /* HERO SECTION */
-
 .hero{
     margin: 150px 0 150px 0;
     display: flex;
@@ -198,7 +182,6 @@ header {
 
 .welcome-content .button::before{
     border-radius: 8px;
-
     position: absolute;
     content: "";
     top: 0;
@@ -208,20 +191,17 @@ header {
     background-image: linear-gradient(to right,#8f37de, #753cda, #5500ff ); 
     opacity: 0;
     z-index: -1;
-    transition: opacity 0.3s linear;
-    
+    transition: opacity 0.3s linear; 
 }
 
 .welcome-content .button:hover::before{
     opacity: 1;
 }
 
-
 .hero-img img {
     float: right;
     width: 400px;
 }
-
 
 .scroll-btn{
     display: flex;
@@ -240,7 +220,7 @@ header {
     transform: translate(0, -50%);
     color: #000000;
     transition: all 500ms ease-in-out;
-  }
+}
 
 .scroll-btn a:hover{
     opacity: 0.3;
@@ -264,7 +244,7 @@ header {
     box-sizing: border-box;
   }
 
-  @-webkit-keyframes rotateDown {
+@-webkit-keyframes rotateDown {
     0% {
       -webkit-transform: rotateY(0) rotateZ(-45deg) translate(0, 0);
       opacity: 0;
@@ -276,8 +256,9 @@ header {
       -webkit-transform: rotateY(720deg) rotateZ(-45deg) translate(-20px, 20px);
       opacity: 0;
     }
-  }
-  @keyframes rotateDown {
+}
+
+@keyframes rotateDown {
     0% {
       transform: rotateY(0) rotateZ(-45deg) translate(0, 0);
       opacity: 0;
@@ -289,7 +270,7 @@ header {
       transform: rotateY(720deg) rotateZ(-45deg) translate(-20px, 20px);
       opacity: 0;
     }
-  }
+}
 
 /* PORTFOLIO SECTION */
 
@@ -302,8 +283,6 @@ header {
     padding-bottom: 10px;
 }
 
-/* FOR TESTING */
-/* card styling */
 .cards-list{
     width: 100%;
     height: auto;
@@ -318,8 +297,6 @@ header {
     position: relative;
     width: 30vw;
     height: 25vw;
-/*     max-width: 450px;
-    max-height: 350px; */
     background-repeat: no-repeat;
     border-radius: 10px;
     cursor: pointer;
@@ -331,6 +308,7 @@ header {
 .card-content{
     position: relative;
     margin: 0 auto;
+    padding: 0 10%;
     width: auto;
     height: auto;
     text-align: center;
@@ -345,7 +323,7 @@ header {
     content: '';
     display: block;
     position: absolute;
-    background: #5a2ed3af;
+    background: rgba(87, 43, 207, 0.829);
     border-radius: 10px;
     width: auto;
     height: 100%;
@@ -374,9 +352,6 @@ header {
     transform: translateX(400px);
 }
 
-.card:hover{
-    
-}
 .card:hover .card-content{
     filter:none;
     -webkit-filter:none;
@@ -398,10 +373,10 @@ header {
 }
 
 #restaurant-webapp::after{
-    background-image: url(/Images/ordamo.PNG);
+    background-image: url(/Images/restaurant-webapp.PNG);
 }
 #portfolio-website::after{
-    background-image: url(/Images/portfolio-website-img.PNG);
+    background-image: url(/Images/portfolio-website.PNG);
 }
 
 .card::after{	
@@ -426,8 +401,6 @@ header {
     -webkit-filter: blur(1px);
     transition: all 250ms ease-in-out;	
 }	
-
-
 
 
 /* BIO SECTION */
@@ -545,7 +518,6 @@ form .button:hover{
 }
 
 /* FOOTER SECTION */
-
 footer{
     height: 50px;
     background-color: #7443FF;
@@ -599,6 +571,10 @@ footer p{
     fill: #7443FF;
 }
 
+.personal-info p:hover{
+    padding: 0 10px;
+}
+
 @media only screen and (min-width: 768px) and (max-width: 1366px){
     
     body{      
@@ -626,10 +602,6 @@ footer p{
         margin: 0 30px;
     }
 
-/*     .cards-list{
-        align-items: center;
-    } */
-
     .bio{
         padding: 100px 0 0 0;
     }
@@ -641,9 +613,7 @@ footer p{
 }
 
 @media only screen and (max-width: 1024px){
-    body{
-    }
-    
+
     body, *{
         font-size: 14px;
     }
@@ -656,8 +626,6 @@ footer p{
         font-size: 28px;
     }
 
-   
-
     h2{
         font-size: 22px;
     }
@@ -668,12 +636,6 @@ footer p{
 
     #myName{
         font-size: 15px;
-    }
-
-    .show-desktop{
-    }
-
-    .nav-bar{
     }
 
     .nav-list{
@@ -697,7 +659,6 @@ footer p{
         align-items: center;
         top: 10px;
         margin: 1em auto;
-        /* padding: 1em 0; */
         height: 100vh;
         width: 100%;
     }
@@ -711,7 +672,6 @@ footer p{
         width: 100%;
         text-align: center;
         transition: 150ms;
-        /* display: contents; */
     }
 
    
@@ -756,7 +716,6 @@ footer p{
         color:white;
         font-weight: 700;
         font-size: 1.5em;
-        /* text-shadow: 0.5px 0.5px 0.5px white, -0.3px -0.3px 0.5px white, 0.5px 0.5px 0.5px white; */
     }
 
 
@@ -806,13 +765,7 @@ footer p{
         padding: 30px 0 5px;
     }
 
-    .welcome-content .button{
-/*         margin: 100px 0 0 0 0; */
-    }
-
     /* PORTFOLIO SECTION */
-
-
     .portfolio{
         padding: 100px 0 0 0;
     }
@@ -824,11 +777,9 @@ footer p{
         align-items: center;
         height: auto;
         margin: 50px 0 0 0;
-        /* width: 100%; */
     }
 
     .card{
-     
         width: 70vw;
         height: 55vw;
         max-width: 450px;
@@ -839,9 +790,16 @@ footer p{
         margin: 35px 0;
     }
 
+    .card-content .card-title{
+        font-size: 16px;
+    }
+
+    .card-content .card-text{
+        font-size: 13px;
+    }
+
 
     /* CONTACT SECTION */
-  
     form{
         width: 70vw;
         max-width: 500px;
@@ -849,7 +807,6 @@ footer p{
 
 
     /* FOOTER SECTION */
-
     footer{
         height: 100px;
         border-radius: 20px 20px 0 0 ;
