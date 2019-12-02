@@ -96,17 +96,15 @@ a {
 
 /* Button styling */
 .button{
+    position: relative;
     font-weight: bold;
-    /* color: white; */
-    /* background-color: #7443FF; */
+    color: white;
+    background-color: #7443FF;
     width:163px;
     height: 48px;
     border: none;
     border-radius: 8px;
     cursor: pointer;
-    color: white;
-    position: relative;
-    background-color: #7443FF;
     z-index: 0;
 }
 
@@ -176,7 +174,6 @@ header {
 .active{
     color: #7443FF;
     text-shadow: 0.5px 0.5px 0.5px #7443FF, -0.3px -0.3px 0.5px #7443FF, 0.5px 0.5px 0.5px #7443FF;
-    /* transition: 50ms; */
 }
 
 /* HERO SECTION */
@@ -208,8 +205,7 @@ header {
     right: 0;
     bottom: 0;
     left: 0;
-    background-image: linear-gradient(to left,rgb(170, 67, 255), #df9930); 
-   
+    background-image: linear-gradient(to right,#8f37de, #753cda, #5500ff ); 
     opacity: 0;
     z-index: -1;
     transition: opacity 0.3s linear;
@@ -233,9 +229,7 @@ header {
     justify-content: center;
     align-items: center;
     position: absolute;
-    left: calc(50% - 53px);
-    /* top: calc(100vh - 10%); */
-    
+    left: calc(50% - 53px);    
 }
 
 .scroll-btn a {
@@ -265,12 +259,12 @@ header {
     border-bottom: 3px solid #000000;
     -webkit-transform: rotateZ(-45deg);
     transform: rotateZ(-45deg);
-    -webkit-animation: sdb06 1.5s infinite;
-    animation: sdb06 2.0s infinite;
+    -webkit-animation: rotateDown 1.5s infinite;
+    animation: rotateDown 2.0s infinite;
     box-sizing: border-box;
   }
 
-  @-webkit-keyframes sdb06 {
+  @-webkit-keyframes rotateDown {
     0% {
       -webkit-transform: rotateY(0) rotateZ(-45deg) translate(0, 0);
       opacity: 0;
@@ -283,7 +277,7 @@ header {
       opacity: 0;
     }
   }
-  @keyframes sdb06 {
+  @keyframes rotateDown {
     0% {
       transform: rotateY(0) rotateZ(-45deg) translate(0, 0);
       opacity: 0;
@@ -309,39 +303,31 @@ header {
 }
 
 /* FOR TESTING */
-
+/* card styling */
 .cards-list{
     width: 100%;
     height: auto;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-evenly;
     align-items: center;
     margin: 100px auto;
 }
 
 .card{
-    /* card styling */
-    /* background-color: #7443FF; bg color can be DELETED */
     background-size: cover;
     position: relative;
-    width: 20vw;
-    height: 17vw;
+    width: 30vw;
+    height: 25vw;
+/*     max-width: 450px;
+    max-height: 350px; */
     background-repeat: no-repeat;
     border-radius: 10px;
     cursor: pointer;
+    box-shadow: 0px 3px 7px 1px rgba(201, 201, 201, 0.692);
+    
 }
 
 /* Portfolio image addition to the cards */
-#card-1{
-    background-image: url(https://unsplash.it/500);
-}
-#card-2{
-    background-image: url(https://unsplash.it/501);
-}
-#card-3{
-    background-image: url(https://unsplash.it/502);
-}
-
 .card-content{
     position: relative;
     margin: 0 auto;
@@ -351,6 +337,8 @@ header {
     top: 3em;
     bottom: 1em;
     opacity: 0;
+    transition: filter 600ms ease-in-out;
+    z-index:-1;
 }
 
 .card::before{
@@ -365,9 +353,8 @@ header {
     bottom: 0;
     left: 0;
     right: 0;
-    z-index: 0;
+    z-index: 1;
     transform: scale(1, 0);
-    
     transition: 200ms cubic-bezier(0, 0.01, 0, 0.54)
 }
 
@@ -387,8 +374,14 @@ header {
     transform: translateX(400px);
 }
 
+.card:hover{
+    
+}
 .card:hover .card-content{
+    filter:none;
+    -webkit-filter:none;
     opacity: 1;
+    z-index: 2;
     transition: all 500ms cubic-bezier(0, -0.07, 0, 0.32) ;
     transform: translateY(0px);
 }
@@ -404,6 +397,38 @@ header {
     transform: translateY(0px);
 }
 
+#restaurant-webapp::after{
+    background-image: url(/Images/ordamo.PNG);
+}
+#portfolio-website::after{
+    background-image: url(/Images/portfolio-website-img.PNG);
+}
+
+.card::after{	
+    content: '';	
+    display: block;	
+    position: absolute;	
+    border-radius: 10px;	
+    width: auto;	
+    height: 100%;	
+    top: 0;	
+    bottom: 0;	
+    left: 0;	
+    right: 0;	
+    z-index: 0;
+    background-size: cover;
+    transition: all 250ms ease-in-out;	
+
+}
+
+.card:hover::after{	
+    filter: blur(1px);	
+    -webkit-filter: blur(1px);
+    transition: all 250ms ease-in-out;	
+}	
+
+
+
 
 /* BIO SECTION */
 .bio{
@@ -418,17 +443,22 @@ header {
     align-items: center;
 }
 
+.bio-img{
+    position: relative;
+}
+
 .bio-img img{
     width: 150px;
     border-radius: 50%;
     margin-bottom: 25px;
+    transition: all 400ms ease-in-out;
 }
 
 .bio-text{
     display: flex;
     align-items: center;
     text-align: center;
-    width: 50%;
+    width: 70%;
 }
 
 
@@ -560,7 +590,6 @@ footer p{
 
 .personal-info-section svg:hover , .personal-info p:hover{
     transition: 200ms ease-in-out;
-    /* padding: 2px; */
     color: #7443FF;
     font-weight: 600;
     border-radius: 10px;
@@ -589,6 +618,12 @@ footer p{
 
     .portfolio{
         padding: 150px 0 0 0;
+    }
+
+    .card{
+        min-width:350px;
+        min-height: 280px;
+        margin: 0 30px;
     }
 
 /*     .cards-list{
@@ -802,11 +837,6 @@ footer p{
 
     .card:nth-child(2){
         margin: 35px 0;
-    }
-
-    /* BIO SECTION */
-    .bio-text{
-        width: inherit;
     }
 
 
