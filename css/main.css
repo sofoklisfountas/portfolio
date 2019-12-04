@@ -44,7 +44,7 @@ html{
 html, body, * {
     font-family: 'Montserrat', sans-serif;
     font-size: 18px;
-    color: black; 
+    color: #111111; 
     margin: 0;
     padding: 0;
 }
@@ -86,14 +86,35 @@ a {
 .button{
     position: relative;
     font-weight: bold;
-    color: white;
-    background-color: #7443FF;
-    width:163px;
-    height: 48px;
-    border: none;
+    width:230px;
+    height: 60px;
+    color: #7443FF;
+    background-color: white;
+    border: 2px solid #7443FF;
     border-radius: 8px;
     cursor: pointer;
-    z-index: 0;
+    overflow:hidden;
+    z-index: 1;
+    transition: all 400ms ease-in-out;
+}
+
+.button:hover {
+  color: white;
+}
+
+.button:before {
+  content: "";
+  position: absolute;
+  background: #7443FF;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  top: 100%;
+  z-index: -1;
+}
+
+.button:hover:before {
+  top: 0;
 }
 
 /* Navigation */
@@ -180,22 +201,16 @@ header {
     margin-top: 70px;
 }
 
-.welcome-content .button::before{
-    border-radius: 8px;
-    position: absolute;
-    content: "";
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    background-image: linear-gradient(to right,#8f37de, #753cda, #5500ff ); 
-    opacity: 0;
-    z-index: -1;
-    transition: opacity 0.3s linear; 
+.welcome-content .button:hover{
+    color: white;
+    border: 2px solid white;
+    transition: all 200ms ease-in-out; 
+
 }
 
-.welcome-content .button:hover::before{
-    opacity: 1;
+.welcome-content .button::before{
+    background: linear-gradient(to right,#8f37de, #753cda, #5500ff ); 
+    transition: all 200ms ease-in-out; 
 }
 
 .hero-img img {
@@ -501,20 +516,6 @@ form input:focus, form textarea:focus{
     background-color: rgba(91, 135, 255, 0.137);
     transition: 300ms ease-in-out;
 
-}
-
-form .button{
-    color: #7443FF;
-    background-color: white;
-    border: 2px solid #7443FF;
-    border-radius: 8px;
-    transition: 300ms ease;
-}
-
-form .button:hover{
-    color: white;
-    background-color: #7443FF;
-    transition: 300ms ease;
 }
 
 /* FOOTER SECTION */
