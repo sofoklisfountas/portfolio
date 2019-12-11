@@ -191,8 +191,9 @@
 
         // Section heights
         let scrollpos = window.scrollY;
-        const nav_height = nav.offsetHeight
-        var position = window.pageYOffset;
+        let position = window.pageYOffset;
+        const nav_height = nav.offsetHeight;
+     ;
        
         
         window.addEventListener('scroll', function() { 
@@ -205,6 +206,7 @@
             else { 
                 header.classList.remove("shadow-bottom"); 
                 header.classList.remove("scrolled");
+                window.scrollTo(0,0); // Fixes flickering sticky navbar when scrolling up.
             }
 
             
