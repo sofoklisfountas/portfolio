@@ -87,34 +87,22 @@ a {
     position: relative;
     font-weight: bold;
     width:230px;
-    height: 60px;
+    height: 61px;
     color: #7443FF;
-    background-color: white;
+    background: linear-gradient(to bottom, white 50%, #7443FF 50%);
+    background-size: 100% 200%;
+    background-position: left top;
     border: 2px solid #7443FF;
-    border-radius: 8px;
+    border-radius: 10px;
     cursor: pointer;
-    overflow:hidden;
     z-index: 1;
     transition: all 400ms ease-in-out;
 }
 
-.button:hover {
-  color: white;
-}
-
-.button:before {
-  content: "";
-  position: absolute;
-  background: #7443FF;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  top: 100%;
-  z-index: -1;
-}
-
-.button:hover:before {
-  top: 0;
+.button:hover{
+    color: white;
+    background-position:left bottom;
+    transition: all 200ms ease-in-out;
 }
 
 /* Navigation */
@@ -199,18 +187,6 @@ header {
 
 .welcome-content .button{
     margin-top: 70px;
-}
-
-.welcome-content .button:hover{
-    color: white;
-    border: 2px solid white;
-    transition: all 200ms ease-in-out; 
-
-}
-
-.welcome-content .button::before{
-    background: linear-gradient(to right,#8f37de, #753cda, #5500ff ); 
-    transition: all 200ms ease-in-out; 
 }
 
 .hero-img img {
