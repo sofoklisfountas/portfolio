@@ -210,12 +210,11 @@ header {
     -webkit-transform: translate(0, -50%);
     transform: translate(0, -50%);
     color: #000000;
-    transition: all 500ms ease-in-out;
+    transition: all 200ms ease-in-out;
 }
 
 .scroll-btn a:hover{
-    opacity: 0.3;
-    transition: all 500ms ease-in-out;
+    color: #7443FF;
 } 
 
 /* Scroll arrow styling and animation*/
@@ -246,6 +245,7 @@ header {
     100% {
       -webkit-transform: rotateY(720deg) rotateZ(-45deg) translate(-20px, 20px);
       opacity: 0;
+      
     }
 }
 
@@ -363,13 +363,6 @@ header {
     transform: translateY(0px);
 }
 
-#restaurant-webapp::after{
-    background-image: url(/Images/restaurant-webapp.PNG);
-}
-#portfolio-website::after{
-    background-image: url(/Images/portfolio-website.PNG);
-}
-
 .card::after{	
     content: '';	
     display: block;	
@@ -393,6 +386,12 @@ header {
     transition: all 250ms ease-in-out;	
 }	
 
+#restaurant-webapp::after{
+    background-image: url(/Images/restaurant-webapp.PNG);
+}
+#portfolio-website::after{
+    background-image: url(/Images/portfolio-website.PNG);
+}
 
 /* BIO SECTION */
 .bio{
