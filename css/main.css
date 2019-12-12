@@ -176,13 +176,14 @@ header {
 
 .nav-link:hover{
     color: var(--secondary-clr);
-    text-shadow: 0.5px 0.5px 0.5px var(--secondary-clr)F, -0.3px -0.3px 0.5px var(--secondary-clr), 0.5px 0.5px 0.5px var(--secondary-clr);
+    text-shadow: 0.3px 0.3px 0.7px var(--secondary-clr), -0.3px -0.3px 0.7px var(--secondary-clr), 0.3px 0.3px 0.7px var(--secondary-clr);
     border-bottom: 3px solid var(--secondary-clr);
+    transition: all 100ms ease-in-out;
 }
 
 .active{
     color: var(--secondary-clr);
-    text-shadow: 0.5px 0.5px 0.5px var(--secondary-clr), -0.3px -0.3px 0.5px var(--secondary-clr), 0.5px 0.5px 0.5px var(--secondary-clr);
+    text-shadow: 0.3px 0.3px 0.7px var(--secondary-clr), -0.3px -0.3px 0.7px var(--secondary-clr), 0.3px 0.3px 0.7px var(--secondary-clr);
 }
 
 /* HERO SECTION */
@@ -230,6 +231,7 @@ header {
 
 .scroll-btn a:hover{
     color: var(--secondary-clr);
+    text-shadow: 0.3px 0.3px 0.7px var(--secondary-clr), -0.3px -0.3px 0.7px var(--secondary-clr), 0.3px 0.3px 0.7px var(--secondary-clr);
 } 
 
 /* Scroll arrow styling and animation*/
